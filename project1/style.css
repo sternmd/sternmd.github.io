@@ -1,0 +1,18 @@
+#red {
+    width: 100px;
+    height: 500px;
+    background-color: rgb(255,0,0);
+    margin-left: 500px;
+}
+
+.red1 {height: 33%;
+       background-color: rgb(255,0,0);
+}
+
+.red2 {height: 33%;
+       background-color: rgb(230,0,0);
+}
+
+.red3 {height: 33%;
+       background-color: rgb(210,0,0);
+}
