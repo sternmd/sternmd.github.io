@@ -28,4 +28,6 @@ Technologies used include HTML/CSS, Javascript, & jQuery.
 
 * If the user clicks the incorrectly colored row, then the game is over. If the farthest left column hits the left side of the screen, then the game is over.
 
+* ROYGBIV is a one-player game, but can be multiplayer with the purpose of a single user gaining the highest score. The player with the best colorvision wins!
+
 ## INSTALLATION INSTRUCTIONS
