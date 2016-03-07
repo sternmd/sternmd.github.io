@@ -1,78 +1,98 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Shopping Cart</title>
-  </head>
-  <script type="text/javascript">
-  var itemsToBeReviewed = [];
-  var itemsToBeReviewedLocation = [];
+<html lang="en">
+<head>
 
-  function reportInvalidItem(product, location) {
-  //sendMail('boss',)
-  itemsToBeReviewed.push(product);
-  itemsToBeReviewedLocation.push(location);
-  };
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Maxwell Stern</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
 
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  var prices = [
-    3.14,
-    69.99,
-    "meow"
-  ];
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href='https://fonts.googleapis.com/css?family=Quattrocento:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Fanwood+Text:400,400italic' rel='stylesheet' type='text/css'>
 
-  var totalPrice = 0;
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/style.css">
 
-  var products = [
-    "Apple Pie",
-    "Auto Cat Feeder", //assigning another value in array
-    70.89
-  ];
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
 
-  console.log('Shopping Cart App');
-  console.log('-----------------');
-  console.log('We have found the following items in your cart:')
-  console.log(prices);
-  console.log(products);
-  console.log('-----------------');
+</head>
+<body>
 
-  // loop through all things
-  prices.forEach(function(item) {
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="12 columns">
+        <header><center><h1>Maxwell Stern</h1></center></header>
 
-    if (typeof item == 'number') {
-       totalPrice = totalPrice + item;
-    } else {
-      //throw new Error("Whoops, someone entered NaN");
-      // console.log(item);
-      // console.log('has bad data');
-      reportInvalidItem(item, prices.indexOf(item));
-    }
+        <nav>
+          <ul>
+            <li><a class="target" href="index.html">Profile</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="cv.html">CV</a></li>
+          </ul>
+        </nav>
 
-    // console.log(item);
+    </div><!-- row-->
 
-  });
+    <div class="row">
+      <div class="one-half column">
 
-  console.log('-----------------');
-  console.log('Your total prics is:')
-  console.log('-----------------');
+    <article>
+      <img src="http://placehold.it/200x300/fd5/fff&text=profile+pic">
 
-  console.log('$' + totalPrice);
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit. Phasellus consequat ligula ac mi pellentesque, at
+        tempor elit iaculis. Maecenas ut turpis finibus, convallis
+        ligula id, molestie nibh. Mauris vel metus a quam convallis
+        ultricies non sit amet ante. Nulla ac lorem a quam faucibus
+        sollicitudin. Nunc vulputate enim quis ex rutrum
+        rhoncus. Fusce nec mi pharetra, interdum augue vel,
+        efficitur urna.</p>
 
-  console.log('-----------------');
-  console.log('We have found invalid items in your cart.');
-  console.log('They have been removed.');
+      <p>Mauris quam orci, varius non vestibulum ac, porta eu
+        turpis. Nam ultrices, ligula a rhoncus euismod, velit urna
+        malesuada tortor, vel sodales odio sapien maximus nunc. Ut
+        malesuada semper leo. Nam ac malesuada risus. Proin commodo
+        lobortis massa ut accumsan. Vivamus ac feugiat
+        ipsum. Aliquam in porta ligula, eget tempus elit.</p>
 
-  console.log(itemsToBeReviewed);
-  console.log(itemsToBeReviewedLocation);
+      <p>Class aptent taciti sociosqu ad litora torquent per
+        conubia nostra, per inceptos himenaeos. Sed sit amet massa
+        non nisl semper tincidunt quis sit amet lectus.</p>
+    </article>
+    </div><!-- close columns -->
 
-  </script>
-  <body>
-    My first shopping cart experience.
-    <section>
-      <article>
-        <h3>My Article Title</h3>
-        <p>Lorem ipsum. My code is here</p>
-      </article>
-    </section>
-  </body>
+      <div class="one-half column">
+        <p>Mauris quam orci, varius non vestibulum ac, porta eu
+          turpis. Nam ultrices, ligula a rhoncus euismod, velit urna
+          malesuada tortor, vel sodales odio sapien maximus nunc. Ut
+          malesuada semper leo. Nam ac malesuada risus. Proin commodo
+          lobortis massa ut accumsan. Vivamus ac feugiat
+          ipsum. Aliquam in porta ligula, eget tempus elit.</p>
+
+        <p>Class aptent taciti sociosqu ad litora torquent per
+          conubia nostra, per inceptos himenaeos. Sed sit amet massa
+          non nisl semper tincidunt quis sit amet lectus.</p>
+
+      </div><!-- close columns -->
+    </div><!-- close row -->
+  </div><!-- close container-->
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
 </html>
