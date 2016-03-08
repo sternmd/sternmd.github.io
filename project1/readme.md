@@ -43,7 +43,6 @@ Technologies used include HTML/CSS, Javascript, & jQuery.
 * Condition on.click wrong div, then game over.
 * Condition if column touches left side of screen, then game over.
 
-
 (Each column is an array of objects...?)
 
 ```CSS
@@ -71,47 +70,68 @@ Blue: rgb(0, 0, 255);
 
 Violet: rgb(255, 0, 255);
 ```
-
 Write a function that returns a random RGB VALUE
 ```js
 
-var random = Math.floor(Math.random() * 50);
+function random() {
+  return Math.floor(Math.random() * 50);
+};  
 
-var plusOrMinus = 150 + Math.random() < 0.5 ? -random : random;
-// var plusOrMinus = 150 + random || 150 - random
-var randomColor = 255 - random;
+function randomColor() {
+  return 255 - random();
+};
+
+ function plusOrMinus() {
+   return (Math.random() < 0.5 ? -random() +150 : random() +150)
+};
 
 function roygbiv(){
 
-  var randomRed = 'rgb(' + randomColor + ',' + 0 + ',' + 0 + ')';
+  var randomRed = 'rgb(' + randomColor() + ',' + 0 + ',' + 0 + ')';
   console.log(randomRed);
 
-  var randomOrange = 'rgb(' + 255 + ',' + plusOrMinus + ',' + 0 + ')';
+  var randomOrange = 'rgb(' + 255 + ',' + plusOrMinus() + ',' + 0 + ')';
   console.log(randomOrange); //SOMEHTING IS OFF HERE>..
 
-  var randomYellow = 'rgb(' + 255  + ',' + randomColor + ',' + 0 + ')';
+  var randomYellow = 'rgb(' + 255  + ',' + randomColor() + ',' + 0 + ')';
   console.log(randomYellow);
 
-  var randomGreen = 'rgb(' + 0  + ',' + randomColor + ',' + 0 + ')';
+  var randomGreen = 'rgb(' + 0  + ',' + randomColor() + ',' + 0 + ')';
   console.log(randomGreen);
 
-  var randomBlue = 'rgb(' + 0  + ',' + 0 + ',' + randomColor + ')';
+  var randomBlue = 'rgb(' + 0  + ',' + 0 + ',' + randomColor() + ')';
   console.log(randomBlue);
 
-  var randomViolet = 'rgb(' + 255  + ',' + 0 + ',' + randomColor + ')';
+  var randomViolet = 'rgb(' + 255  + ',' + 0 + ',' + randomColor() + ')';
   console.log(randomViolet);
 };
 
 roygbiv();
 
-```
-Write a plus or minus function?
+$($'red1').css(backgroundColor);
 
+```
 Use animate? to move rows left to right .
 
-Set conditions to find the brightest colored div in each column. This may require a new function equation?
+Set function to determine the brightest colored div in each column.
 
-Set event listener on-click the brightest colored div, then column disappears .remove() and add +1 to variable scoreCounter.
+You have to extract the three RGB components individually, and then use a standard formula to convert the resulting RGB values into their perceived brightness.
+
+```js
+
+
+Assuming a RGB value character color:
+
+var color = 'rgb(255,150,0)'
+
+function colorSlicer(color) {
+  var colorArray = color.slice(4,color.length-1).split(",");
+  var luminace = 0.299 * parseInt(colorArray[0]) + 0.587 * parseInt(colorArray[1]) + 0.114 * parseInt(colorArray[2]);
+  return luminace;
+}
+
+find highest luminance of three divs. Set that to winnerDiv.
+If user clicks winnerDiv, then column disappears .remove() and add +1 to scoreCounter.
 
 Set condition if wrong div is click, game over.
 Set condition if column hits left side of screen, game over.
