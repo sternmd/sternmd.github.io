@@ -57,7 +57,7 @@ $( document ).ready(function() {
 
     function loopViolet() {
 
-        $('#indigo').animate ({
+        $('#violet').animate ({
             right: '+=100%',
         }, 15000, 'linear');
     }
