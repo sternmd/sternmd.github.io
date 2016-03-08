@@ -1,13 +1,12 @@
 $( document ).ready(function() {
-    console.log( "ready!" );
+
+    $("#red").animate({
+        'marginLeft': '-=100%'
+    }, 6000);
 
 
-$("#red").animate({
-    'marginLeft': '-=450px'
-}, 10000);
-
-//write a function that returns a random number between 1 and 50
-//this is the range at which we want the colors r,g,b to vary.
+// write a function that returns a random number between 1 and 50
+// this is the range at which we want the colors r,g,b to vary.
 
 function random() {
   return Math.floor(Math.random() * 50);
@@ -45,9 +44,98 @@ function randomViolet() {
   return 'rgb(' + 255  + ',' + 0 + ',' + randomColor() + ')';
 }
 
-$("#red div :first").css("background-color",randomRed());
-$("#red div :nth-child(2)").css("background-color",randomRed());
-$("#red div :last").css("background-color",randomRed());
+// $("#red div :first").css("background-color",randomRed());
+// $("#red div :nth-child(2)").css("background-color",randomRed());
+// $("#red div :last").css("background-color",randomRed());
+
+//REDS
+$(".red1").each(function() {
+    $(this).css("background-color", randomRed());
+});
+
+$(".red2").each(function() {
+    $(this).css("background-color", randomRed());
+});
+
+$(".red3").each(function() {
+    $(this).css("background-color", randomRed());
+});
+
+//ORANGES
+$(".orange1").each(function() {
+    $(this).css("background-color", randomOrange());
+});
+
+$(".orange2").each(function() {
+    $(this).css("background-color", randomOrange());
+});
+
+$(".orange3").each(function() {
+    $(this).css("background-color", randomOrange());
+});
+
+//YELLOW
+$(".yellow1").each(function() {
+    $(this).css("background-color", randomYellow());
+});
+
+$(".yellow2").each(function() {
+    $(this).css("background-color", randomYellow());
+});
+
+$(".yellow3").each(function() {
+    $(this).css("background-color", randomYellow());
+});
+
+//GREEN
+$(".green1").each(function() {
+    $(this).css("background-color", randomGreen());
+});
+
+$(".green2").each(function() {
+    $(this).css("background-color", randomGreen());
+});
+
+$(".green3").each(function() {
+    $(this).css("background-color", randomGreen());
+});
+
+//BLUE
+$(".blue1").each(function() {
+    $(this).css("background-color", randomBlue());
+});
+
+$(".blue2").each(function() {
+    $(this).css("background-color", randomBlue());
+});
+
+$(".blue3").each(function() {
+    $(this).css("background-color", randomBlue());
+});
+
+//VIOLET
+$(".violet1").each(function() {
+    $(this).css("background-color", randomViolet());
+});
+
+$(".violet2").each(function() {
+    $(this).css("background-color", randomViolet());
+});
+
+$(".violet3").each(function() {
+    $(this).css("background-color", randomViolet());
+});
+
+var redColors = $('#red').children('div');
+for (var inc = 0; inc < 3; inc++) {
+  console.log($(redColors[inc]).prop('style').backgroundColor);
+  }
+
+//Returns all RGB values from the divs.
+
+var redOne = redColors.prop('style').backgroundColor;
+
+//Returns single RGB value a div.
 
 // Set a function to determine Luminance from a RGB value.
 // Extract the three RGB components individually.
@@ -67,9 +155,12 @@ function colorSlicer(color) {
 }
 
 
-Find highest luminance of three divs. Set that to winnerDiv.
+// Find highest luminance of three divs. Set that to winnerDiv.
 
-If user clicks winnerDiv, then column disappears .remove() and add +1 to scoreCounter.
+// var winnerDiv =
+
+
+// If user clicks winnerDiv, then column disappears .remove() and add +1 to scoreCounter.
 
 // Set condition if wrong div is click, game over.
 // Set condition if column hits left side of screen, game over.

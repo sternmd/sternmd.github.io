@@ -9,37 +9,101 @@
     margin-left: 100%;
 }
 
-.red1 {height: 10%;
-       width: 100%;
-       border: 1px solid black;
+.red1 {height: 33%;
 }
 
-.red2 {height: 50%;
-         width: 100%;
-       border: 1px solid black;
+.red2 {height: 33%;
 }
 
-.red3 {height: 40%;
-         width: 100%;
-       border: 1px solid black;
+.red3 {height: 33%;
 }
 
-
-/*#blue {
+#orange {
     width: 100px;
     height: 500px;
-    background-color: rgb(0,0,255);
+    margin-left: 100%;
+}
+
+.orange1 {height: 33%;
+
+}
+
+.orange2 {height: 33%;
+
+}
+
+.orange3 {height: 33%;
+
+}
+
+#yellow {
+    width: 100px;
+    height: 500px;
+    margin-left: 100%;
+}
+
+.yellow1 {height: 33%;
+
+}
+
+.yellow2 {height: 33%;
+
+}
+
+.yellow3 {height: 33%;
+
+}
+
+#green {
+    width: 100px;
+    height: 500px;
+    margin-left: 100%;
+}
+
+.green1 {height: 33%;
+
+}
+
+.green2 {height: 33%;
+
+}
+
+.green3 {height: 33%;
+
+}
+
+#blue {
+    width: 100px;
+    height: 500px;
     margin-left: 100%;
 }
 
 .blue1 {height: 33%;
-       background-color: rgb(0,0,240);
+
 }
 
 .blue2 {height: 33%;
-       background-color: rgb(0,0,230);
+
 }
 
 .blue3 {height: 33%;
-       background-color: rgb(0,0,200);
-}*/
+
+}
+
+#violet {
+    width: 100px;
+    height: 500px;
+    margin-left: 100%;
+}
+
+.violet1 {height: 33%;
+
+}
+
+.violet2 {height: 33%;
+
+}
+
+.violet3 {height: 33%;
+
+}
