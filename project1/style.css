@@ -1,12 +1,18 @@
 #wrapper {
-  overflow: hidden;
   display: inline-block;
 }
 
 #red {
-    width: 100px;
-    height: 500px;
+  position: absolute;
+  width: 100px;
+  height: 900px;
+  top:0px;
+  right:0px;
+
+    /*width: 100px;
+    height: 900px;
     margin-left: 100%;
+    display: inline-block;*/
 }
 
 .red1, .red2, .red3 {
@@ -14,9 +20,11 @@
 }
 
 #orange {
+    position: absolute;
     width: 100px;
-    height: 500px;
-    margin-left: 100%;
+    height: 900px;
+    top:0px;
+    right:-100px;
 }
 
 .orange1, .orange2, .orange3 {
@@ -24,9 +32,15 @@
 }
 
 #yellow {
-    width: 100px;
-    height: 500px;
+  position: absolute;
+  width: 100px;
+  height: 900px;
+  top:0px;
+  right:-200px;
+    /*width: 100px;
+    height: 900px;
     margin-left: 100%;
+    display: inline-block;*/
 }
 
 .yellow1, .yellow2, .yellow3 {
@@ -34,9 +48,15 @@
 }
 
 #green {
-    width: 100px;
-    height: 500px;
+  position: absolute;
+  width: 100px;
+  height: 900px;
+  top:0px;
+  right:-300px;
+    /*width: 100px;
+    height: 900px;
     margin-left: 100%;
+    display: inline-block;*/
 }
 
 .green1, .green2, .green3 {
@@ -44,9 +64,15 @@
 }
 
 #blue {
-    width: 100px;
-    height: 500px;
+  position: absolute;
+  width: 100px;
+  height: 900px;
+  top:0px;
+  right:-400px;
+    /*width: 100px;
+    height: 900px;
     margin-left: 100%;
+    display: inline-block;*/
 }
 
 .blue1, .blue2, .blue3 {
@@ -54,9 +80,15 @@
 }
 
 #indigo {
-    width: 100px;
-    height: 500px;
+  position: absolute;
+  width: 100px;
+  height: 900px;
+  top:0px;
+  right:-500px;
+    /*width: 100px;
+    height: 900px;
     margin-left: 100%;
+    display: inline-block;*/
 }
 
 .indigo1, .indigo2, .indigo3 {
@@ -64,9 +96,15 @@
 }
 
 #violet {
-    width: 100px;
-    height: 500px;
+  position: absolute;
+  width: 100px;
+  height: 900px;
+  top:0px;
+  right:-600px;
+    /*width: 100px;
+    height: 900px;
     margin-left: 100%;
+    display: inline-block;*/
 }
 
 .violet1, .violet2, .violet3 {

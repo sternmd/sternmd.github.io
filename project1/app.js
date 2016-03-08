@@ -1,36 +1,98 @@
 $( document ).ready(function() {
 
-    $("#red").animate({
-        'marginLeft': '-=100%'
-    }, 10000);
+    // $("#red").animate({
+    //     'marginLeft': '-=100%'
+    // }, 15000);
 
-    $("#orange").animate({
-        'marginLeft': '-=100%'
-    }, 10000);
+    function loopRed() {
+
+        $('#red').animate ({
+            right: '+=100%',
+        }, 15000, 'linear');
+    }
+    loopRed();
+
+
+    function loopOrange() {
+
+        $('#orange').animate ({
+            right: '+=100%',
+        }, 15000, 'linear');
+    }
+    loopOrange();
+
+
+    function loopYellow() {
+
+        $('#yellow').animate ({
+            right: '+=100%',
+        }, 15000, 'linear');
+    }
+    loopYellow();
+
+
+    function loopGreen() {
+
+        $('#green').animate ({
+            right: '+=100%',
+        }, 15000, 'linear');
+    }
+    loopGreen();
+
+    function loopBlue() {
+
+        $('#blue').animate ({
+            right: '+=100%',
+        }, 15000, 'linear');
+    }
+    loopBlue();
+
+    function loopIndigo() {
+
+        $('#indigo').animate ({
+            right: '+=100%',
+        }, 15000, 'linear');
+    }
+    loopIndigo();
+
+    function loopViolet() {
+
+        $('#indigo').animate ({
+            right: '+=100%',
+        }, 15000, 'linear');
+    }
+    loopViolet();
+
+
+
+
+    // $("#orange").animate({
+    //     'marginLeft': '-=100%'
+    // }, 15000);
 
     $("#yellow").animate({
         'marginLeft': '-=100%'
-    }, 10000);
+    }, 15000);
 
     $("#green").animate({
         'marginLeft': '-=100%'
-    }, 10000);
+    }, 15000);
 
     $("#blue").animate({
         'marginLeft': '-=100%'
-    }, 10000);
+    }, 15000);
 
     $("#indigo").animate({
         'marginLeft': '-=100%'
-    }, 10000);
+    }, 15000);
 
     $("#purple").animate({
         'marginLeft': '-=100%'
-    }, 10000);
+    }, 15000);
 
     $("#violet").animate({
         'marginLeft': '-=100%'
-    }, 10000);
+    }, 15000);
 
 
 // write a function that returns a random number between 1 and 50
