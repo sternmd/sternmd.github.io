@@ -30,4 +30,88 @@ Technologies used include HTML/CSS, Javascript, & jQuery.
 
 * ROYGBIV is a one-player game, but can be multiplayer with the purpose of a single user gaining the highest score. The player with the best colorvision wins!
 
-## INSTALLATION INSTRUCTIONS
+## SIMPLE PSEUDOCODE
+
+* Simple Create 6 columns ids. Each column contains 3 divs.
+* Use jQuery to inject a varying height for each div.
+* Create function or loop that endless animates columns.
+* Make columns move across the screen. From left to write.
+* Write a randomColor function that satisfies all random colors in RGB with range 50.
+* Write function to determine the brightest colored div in each column.
+* Set on.click brightest colored div, make column disappears.
+* Create scoreCoutner variable, set at 0. On correct click, scoreCounter + 1.
+* Condition on.click wrong div, then game over.
+* Condition if column touches left side of screen, then game over.
+
+
+(Each column is an array of objects...?)
+
+```CSS
+#red {
+    width: 100px;
+    height: 500px;
+    background-color: rgb(255,0,0);
+    margin-left: 500px;   
+}
+```
+
+Create 3 div child rows for each column. Fill a respective background-color to each child div row. Use math.random and math.floor to randomize colors.
+Define colors in rgb:
+
+```CSS
+Red: rgb(255, 0, 0);
+
+Orange: rgb(255, 128, 0);
+
+Yellow: rgb(255, 255, 0);
+
+Green: rgb(0, 255, 0);
+
+Blue: rgb(0, 0, 255);
+
+Violet: rgb(255, 0, 255);
+```
+
+Write a function that returns a random RGB VALUE
+```js
+
+var random = Math.floor(Math.random() * 50);
+
+var plusOrMinus = 150 + Math.random() < 0.5 ? -random : random;
+// var plusOrMinus = 150 + random || 150 - random
+var randomColor = 255 - random;
+
+function roygbiv(){
+
+  var randomRed = 'rgb(' + randomColor + ',' + 0 + ',' + 0 + ')';
+  console.log(randomRed);
+
+  var randomOrange = 'rgb(' + 255 + ',' + plusOrMinus + ',' + 0 + ')';
+  console.log(randomOrange); //SOMEHTING IS OFF HERE>..
+
+  var randomYellow = 'rgb(' + 255  + ',' + randomColor + ',' + 0 + ')';
+  console.log(randomYellow);
+
+  var randomGreen = 'rgb(' + 0  + ',' + randomColor + ',' + 0 + ')';
+  console.log(randomGreen);
+
+  var randomBlue = 'rgb(' + 0  + ',' + 0 + ',' + randomColor + ')';
+  console.log(randomBlue);
+
+  var randomViolet = 'rgb(' + 255  + ',' + 0 + ',' + randomColor + ')';
+  console.log(randomViolet);
+};
+
+roygbiv();
+
+```
+Write a plus or minus function?
+
+Use animate? to move rows left to right .
+
+Set conditions to find the brightest colored div in each column. This may require a new function equation?
+
+Set event listener on-click the brightest colored div, then column disappears .remove() and add +1 to variable scoreCounter.
+
+Set condition if wrong div is click, game over.
+Set condition if column hits left side of screen, game over.
