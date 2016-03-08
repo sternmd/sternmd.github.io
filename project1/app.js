@@ -2,7 +2,35 @@ $( document ).ready(function() {
 
     $("#red").animate({
         'marginLeft': '-=100%'
-    }, 6000);
+    }, 10000);
+
+    $("#orange").animate({
+        'marginLeft': '-=100%'
+    }, 10000);
+
+    $("#yellow").animate({
+        'marginLeft': '-=100%'
+    }, 10000);
+
+    $("#green").animate({
+        'marginLeft': '-=100%'
+    }, 10000);
+
+    $("#blue").animate({
+        'marginLeft': '-=100%'
+    }, 10000);
+
+    $("#indigo").animate({
+        'marginLeft': '-=100%'
+    }, 10000);
+
+    $("#purple").animate({
+        'marginLeft': '-=100%'
+    }, 10000);
+
+    $("#violet").animate({
+        'marginLeft': '-=100%'
+    }, 10000);
 
 
 // write a function that returns a random number between 1 and 50
@@ -38,6 +66,10 @@ function randomGreen() {
 
 function randomBlue() {
   return 'rgb(' + 0  + ',' + 0 + ',' + randomColor() + ')';
+}
+
+function randomIndigo() {
+  return 'rgb(' + plusOrMinus()  + ',' + 0 + ',' + 255 + ')';
 }
 
 function randomViolet() {
@@ -111,6 +143,19 @@ $(".blue2").each(function() {
 
 $(".blue3").each(function() {
     $(this).css("background-color", randomBlue());
+});
+
+//INDIGO
+$(".indigo1").each(function() {
+    $(this).css("background-color", randomIndigo());
+});
+
+$(".indigo2").each(function() {
+    $(this).css("background-color", randomIndigo());
+});
+
+$(".indigo3").each(function() {
+    $(this).css("background-color", randomIndigo());
 });
 
 //VIOLET

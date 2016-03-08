@@ -68,6 +68,8 @@ Green: rgb(0, 255, 0);
 
 Blue: rgb(0, 0, 255);
 
+Indigo: rgb(120, 0, 255);
+
 Violet: rgb(255, 0, 255);
 ```
 Write a function that returns a random RGB VALUE
@@ -111,10 +113,8 @@ roygbiv();
 $($'red1').css(backgroundColor);
 
 ```
-Use animate? to move rows left to right .
 
-Set function to determine the brightest colored div in each column.
-
+Set function to determine the brightest (most luminace) colored div in each column.
 You have to extract the three RGB components individually, and then use a standard formula to convert the resulting RGB values into their perceived brightness.
 
 ```js
@@ -129,9 +129,3 @@ function colorSlicer(color) {
   var luminace = 0.299 * parseInt(colorArray[0]) + 0.587 * parseInt(colorArray[1]) + 0.114 * parseInt(colorArray[2]);
   return luminace;
 }
-
-find highest luminance of three divs. Set that to winnerDiv.
-If user clicks winnerDiv, then column disappears .remove() and add +1 to scoreCounter.
-
-Set condition if wrong div is click, game over.
-Set condition if column hits left side of screen, game over.

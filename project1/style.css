@@ -53,6 +53,16 @@
   height: 33%;
 }
 
+#indigo {
+    width: 100px;
+    height: 500px;
+    margin-left: 100%;
+}
+
+.indigo1, .indigo2, .indigo3 {
+  height: 33%;
+}
+
 #violet {
     width: 100px;
     height: 500px;
