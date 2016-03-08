@@ -1,3 +1,7 @@
+body{
+  font-family: 'arcadeclassic';
+}
+
 #wrapper {
   display: inline-block;
 }
@@ -109,4 +113,23 @@
 
 .violet1, .violet2, .violet3 {
   height: 33%;
+}
+
+#scoreCounter {
+  position: absolute;
+  z-index: 1;
+  top: 3%;
+  left: 3%;
+}
+
+@font-face {
+    font-family:'arcadeclassic';
+    src: url(fonts/arcadeclassic-webfont.eot);
+    src: url(fonts/arcadeclassic-webfont.eot?#iefix) format('embedded-opentype'),
+         url(fonts/arcadeclassic-webfont.woff2) format('woff2'),
+         url(fonts/arcadeclassic-webfont.woff) format('woff'),
+         url(fonts/arcadeclassic-webfont.ttf) format('truetype'),
+         url(fonts/arcadeclassic-webfont.svg#arcadeclassic) format('svg');
+    font-weight: normal;
+    font-style: normal;
 }

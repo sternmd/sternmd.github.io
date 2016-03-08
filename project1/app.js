@@ -261,11 +261,9 @@ function colorSlicer(color) {
   return luminace;
 }
 
-
 // Find highest luminance of three divs. Set that to winnerDiv.
 
 // var winnerDiv =
-
 
 // If user clicks winnerDiv, then column disappears .remove() and add +1 to scoreCounter.
 
