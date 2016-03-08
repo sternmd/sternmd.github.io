@@ -6,23 +6,26 @@
 #red {
     width: 100px;
     height: 500px;
-    background-color: rgb(255,0,0);
     margin-left: 100%;
 }
 
 .red1 {height: 10%;
-       background-color: rgb(230,0,0);
+       width: 100%;
+       border: 1px solid black;
 }
 
 .red2 {height: 50%;
-       background-color: rgb(240,0,0);
+         width: 100%;
+       border: 1px solid black;
 }
 
 .red3 {height: 40%;
-       background-color: rgb(220,0,0);
+         width: 100%;
+       border: 1px solid black;
 }
 
-#blue {
+
+/*#blue {
     width: 100px;
     height: 500px;
     background-color: rgb(0,0,255);
@@ -39,4 +42,4 @@
 
 .blue3 {height: 33%;
        background-color: rgb(0,0,200);
-}
+}*/

@@ -21,34 +21,42 @@ function randomColor() {
    return (Math.random() < 0.5 ? -random() +150 : random() +150)
 };
 
-function roygbiv(){
+function randomRed() {
+  return 'rgb(' + randomColor() + ',' + 0 + ',' + 0 + ')'
+}
 
-  var randomRed = 'rgb(' + randomColor() + ',' + 0 + ',' + 0 + ')';
-  console.log(randomRed);
+function randomOrange() {
+  return 'rgb(' + 255 + ',' + plusOrMinus() + ',' + 0 + ')';
+}
 
-  var randomOrange = 'rgb(' + 255 + ',' + plusOrMinus() + ',' + 0 + ')';
-  console.log(randomOrange); //SOMEHTING IS OFF HERE>..
+function randomYellow() {
+  return 'rgb(' + 255  + ',' + randomColor() + ',' + 0 + ')';
+}
 
-  var randomYellow = 'rgb(' + 255  + ',' + randomColor() + ',' + 0 + ')';
-  console.log(randomYellow);
+function randomGreen() {
+  return 'rgb(' + 0  + ',' + randomColor() + ',' + 0 + ')';
+}
 
-  var randomGreen = 'rgb(' + 0  + ',' + randomColor() + ',' + 0 + ')';
-  console.log(randomGreen);
+function randomBlue() {
+  return 'rgb(' + 0  + ',' + 0 + ',' + randomColor() + ')';
+}
 
-  var randomBlue = 'rgb(' + 0  + ',' + 0 + ',' + randomColor() + ')';
-  console.log(randomBlue);
+function randomViolet() {
+  return 'rgb(' + 255  + ',' + 0 + ',' + randomColor() + ')';
+}
 
-  var randomViolet = 'rgb(' + 255  + ',' + 0 + ',' + randomColor() + ')';
-  console.log(randomViolet);
-};
-roygbiv();
+$("#red div :first").css("background-color",randomRed());
+$("#red div :nth-child(2)").css("background-color",randomRed());
+$("#red div :last").css("background-color",randomRed());
 
+// Set a function to determine Luminance from a RGB value.
+// Extract the three RGB components individually.
+// Then use a standard formula to convert the resulting RGB values into perceived brightness.
 
-// $($'div1').css(backgroundColor);
-// Set a function to determine the brightest (most luminescent) colored
-// You have to extract the three RGB components individually,
-// and then use a standard formula to convert the resulting RGB values into their perceived brightness.
+// --> colorSlicer(black)=0;
+// --> colorSlicker(yellow)=226;
 
+// The higher the luminance number, the brighter the color.
 
 var color = 'rgb(255,150,0)'
 
@@ -59,4 +67,10 @@ function colorSlicer(color) {
 }
 
 
+Find highest luminance of three divs. Set that to winnerDiv.
+
+If user clicks winnerDiv, then column disappears .remove() and add +1 to scoreCounter.
+
+// Set condition if wrong div is click, game over.
+// Set condition if column hits left side of screen, game over.
 });
