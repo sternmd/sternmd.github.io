@@ -1,3 +1,6 @@
+var arrayOfDivColors = [];
+var arrayOfLuminance = [];
+
 $( document ).ready(function() {
 
 // Moves column IDs across screen.
@@ -205,23 +208,29 @@ $(".violet3").each(function() {
     $(this).css("background-color", randomViolet());
 });
 
+//var arrayOfDivColors = [];
 // Extracts all RGB values that are applied to divs within columns.
 var redColors = $('#red').children('div');
 for (var inc = 0; inc < 3; inc++) {
-  console.log($(redColors[inc]).prop('style').backgroundColor);
+  arrayOfDivColors.push(($(redColors[inc]).prop('style').backgroundColor));
   }
 
 // Returns single RGB value that is applied to divs within columns.
-var redOne = redColors.prop('style').backgroundColor;
+// var redOne = redColors.prop('style').backgroundColor;
 
 // Convert RGB values into LUMINANCE (perceived brightness units).
 var color = 'rgb(255,150,0)'
 
-function colorSlicer(color) {
-  var colorArray = color.slice(4,color.length-1).split(",");
-  var luminace = 0.299 * parseInt(colorArray[0]) + 0.587 * parseInt(colorArray[1]) + 0.114 * parseInt(colorArray[2]);
-  return luminace;
+function colorSlicer(arrayOfRGB) {
+  // for loop through array,
+  for (var inc = 0; inc < 3; inc++) {
+  var luminanceArray = arryofRGB[i].slice(4,arryofRGB[i].length-1).split(","); }
+  // var luminace = 0.299 * parseInt(colorArray[0]) + 0.587 * parseInt(colorArray[1]) + 0.114 * parseInt(colorArray[2]);
+  // return luminace;
+  return luminaceArray;
+  //eventually push sliced converted luminance values into a new array , run math.max() on those to determine Winner
 }
+
 // --> colorSlicer(black)   = 0;
 // --> colorSlicker(yellow) = 226;
 // The higher the luminance number, the brighter the color.
@@ -237,10 +246,13 @@ function colorSlicer(color) {
 
 // If user clicks winnerDiv, then column disappears .remove() and add +1 to scoreCounter.
 
-// $('div class/id winner').click(function(){
+// $('div class winner').click(function(){
 // var scoreCounter =+ 1;
 // (this).remove();
 //});
+
+// if $('#red').children('div').style.left == "0") {
+//             alert('gameover');
 
 // Set condition if wrong div is click, game over.
 
@@ -248,12 +260,21 @@ function colorSlicer(color) {
 
 // var offScreen = $('div#').css({
 //       top: 0,
-//       left: 0});
+//       left: 0}); or if right = 100%
 //
 // var gameOver = $('#gameover').text("<center><h1>G A M E O V E R</h1><center>");
 //
 // if OffScreen {
 //   return gameOver;
 // }
+
+// Endlessly spawn new divs columns.
+// var new = $('#new');
+// new.style.position = "absolute";
+// new.style.left = $('div#:last-child').style.right.length() - 100px;
+// new.style.width: 100px;
+  // height: 900px;
+  // top:0px;
+
 
 });
