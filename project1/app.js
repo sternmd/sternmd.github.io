@@ -5,16 +5,8 @@ var scoreCounter = 0;
 $( document ).ready(function() {
 
 
-function applyData(finalLumArray){
-  for (var i = 0; i < finalLumArray.length; i++) {
-    $('#red1').data("lumvalue",finalLumArray[0];
-    // $('#red2').data( "lumvalue", finalLumArray[1] );
-    // $('#red3').data( "lumvalue", finalLumArray[1] );
-    // $(#red).attr('data-lumvalue',finalLumArray[0]);
-  }
-}
-
-$('.red1').data('lumvalue')
+//THIS RETURNS FINAL LUM ARRAY
+// calcLuminance(rgbStripper(arrayOfDivColors))
 
 // Moves column IDs across screen.
 function loopRed() {
@@ -226,29 +218,6 @@ for (var inc = 0; inc < 3; inc++) {
 
 console.log(arrayOfDivColors);
 
-//THIS RETURNS FINAL LUM ARRAY
-
-
-
-// Set condition if wrong div is click, game over.
-
-// Set condition if column hits left side of screen, game over.
-
-//       left: 0}); or if right = 100%
-//
-// var gameOver = $('#gameover').text("<center><h1>G A M E O V E R</h1><center>");
-//
-// if OffScreen {
-//   return gameOver;
-// }
-
-// Endlessly spawn new divs columns.
-// var new = $('#new'); append?
-// new.style.position = "absolute";
-// new.style.left = $('div#:last-child').style.right.length() - 100px;
-// new.style.width: 100px;
-  // height: 900px;
-  // top:0px;
 });
 
 // This function can take the arrayOfDivColors (RGBs) and strips letters and parentheses.
@@ -273,42 +242,61 @@ function calcLuminance(someArray){
   arrayOfCalcLuminance.push(parseLum(array3));
   return arrayOfCalcLuminance
 }
-// -->
+
 function winner(arrayCalcWinner){
-  Math.max.apply(Math, arrayCalcWinner)
+    return Math.max.apply(Math, arrayCalcWinner)
 }
+
 //this function takes an array of RGB values - [255,0,0] - and converts it into a single LuminValue - .
 function parseLum(colorArray){
   var luminValue = 0.299 * parseInt(colorArray[0]) + 0.587 * parseInt(colorArray[1]) + 0.114 * parseInt(colorArray[2]);
   return luminValue
 }
 
-// var winner = Math.max(lum1,lum2,lum3);
-//   var lum1 = Math.max.apply(Math, arrayOfRGBColors[0]); //
-//   var lum2 = Math.max.apply(Math, arrayOfRGBColors[1]); //
-//   var lum3 = Math.max.apply(Math, arrayOfRGBColors[2]); //
-//
-// console.log('lum1: ' + lum1 + " lum2: " + lum2 + " lum3: " + lum3)
-//
-// function determineWinner(lum1,lum2,lum3) {
-//   Math.max(lum1,lum2,lum3);
-//   console.log(Math.max(lum1,lum2,lum3));
-// }
+// This function applies respective luminValue to the data value of the class.
+function applyData(finalLumArray){
+  for (var i = 0; i < finalLumArray.length; i++) {
+    $('#red1').data("lumvalue",finalLumArray[0]);
+    $('#red2').data("lumvalue",finalLumArray[1]);
+    $('#red3').data("lumvalue",finalLumArray[2]);
+  }
+}
 
+// ON CLICK EVENTS
 
-// $('div').click(function(){
-//    $(this).parent().remove();
-// });
+$('.redbox').click(function(){
+  applyData(calcLuminance(rgbStripper(arrayOfDivColors)))
+  var allMyCalc = calcLuminance(rgbStripper(arrayOfDivColors))
+  console.log($(this).data('lumvalue'))
+  if($(this).data('lumvalue') === winner(allMyCalc)){
+    $(this).parent().remove();
+    $('#counter').html(function(i, val) { return +val+1 });
+  }
 
-// $('div').click(function() {
-//   $(this).parent().remove();}
-
-$('#red1').click(function(){
-   $(this).parent().remove();
-   $('#counter').html(function(i, val) { return +val+1 });
-  //  scoreCounter =+1;
+  //
 })
+
 // calcLuminance(rgbStripper(arrayOfDivColors))
 // if ($('div').css({right: 100%).prop('style').right == 100%){
 //   $('h1').append("<strong>GAMEOVER</strong>")
+// }
+
+// Endlessly spawn new divs columns.
+// var new = $('#new'); append?
+// new.style.position = "absolute";
+// new.style.left = $('div#:last-child').style.right.length() - 100px;
+// new.style.width: 100px;
+// height: 900px;
+// top:0px;
+
+// Set condition if wrong div is click, game over.
+
+// Set condition if column hits left side of screen, game over.
+
+//       left: 0}); or if right = 100%
+//
+// var gameOver = $('#gameover').text("<center><h1>G A M E O V E R</h1><center>");
+//
+// if OffScreen {
+//   return gameOver;
 // }
