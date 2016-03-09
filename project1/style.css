@@ -118,11 +118,21 @@ body{
   height: 33%;
 }
 
-#scoreCounter {
+h1{
   position: absolute;
-  z-index: 1;
-  top: 3%;
-  left: 3%;
+  z-index: 0;
+  width: 200px;
+  top: 0px;
+  left: 9px;
+}
+
+#instructions {
+  position: absolute;
+  border: 1px dashed white;
+  z-index: 0;
+  width: 200px;
+  top: 50px;
+  left: 9px;
 }
 
 @font-face {

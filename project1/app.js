@@ -1,5 +1,6 @@
 var arrayOfDivColors = [];
 var arrayOfLuminance = [];
+var scoreCounter = 0;
 
 $( document ).ready(function() {
 
@@ -208,48 +209,22 @@ $(".violet3").each(function() {
     $(this).css("background-color", randomViolet());
 });
 
-//var arrayOfDivColors = [];
-// Extracts all RGB values that are applied to divs within columns.
+// Extracts all RGB values that are applied to divs within columns into an arrayOfColors.
 var redColors = $('#red').children('div');
 for (var inc = 0; inc < 3; inc++) {
   arrayOfDivColors.push(($(redColors[inc]).prop('style').backgroundColor));
   }
 
-// Returns single RGB value that is applied to divs within columns.
-// var redOne = redColors.prop('style').backgroundColor;
+console.log(arrayOfDivColors);
 
-// Convert RGB values into LUMINANCE (perceived brightness units).
-var color = 'rgb(255,150,0)'
+// Convert RGB values into LUMINANCE (perceived brightness units) and push those colors into a new arrayOfLuminance.
 
-function colorSlicer(arrayOfRGB) {
-  // for loop through array,
-  for (var inc = 0; inc < 3; inc++) {
-  var luminanceArray = arryofRGB[i].slice(4,arryofRGB[i].length-1).split(","); }
-  // var luminace = 0.299 * parseInt(colorArray[0]) + 0.587 * parseInt(colorArray[1]) + 0.114 * parseInt(colorArray[2]);
-  // return luminace;
-  return luminaceArray;
-  //eventually push sliced converted luminance values into a new array , run math.max() on those to determine Winner
-}
-
-// --> colorSlicer(black)   = 0;
-// --> colorSlicker(yellow) = 226;
-// The higher the luminance number, the brighter the color.
-
-// var highest = Math.max() ... ?
-
-// Find highest luminance of three divs. Set that to winnerDiv.
-// .append / AddClass winner??
-// for loop
-
-
-// var winnerDiv =
 
 // If user clicks winnerDiv, then column disappears .remove() and add +1 to scoreCounter.
-
 // $('div class winner').click(function(){
 // var scoreCounter =+ 1;
 // (this).remove();
-//});
+// });
 
 // if $('#red').children('div').style.left == "0") {
 //             alert('gameover');
@@ -275,6 +250,52 @@ function colorSlicer(arrayOfRGB) {
 // new.style.width: 100px;
   // height: 900px;
   // top:0px;
-
-
 });
+
+
+function colorSlicer(arrayOfRGB) {
+  // for loop through arrayOfDivColors,
+  for (var i = 0; i < 3; i++) {
+    arrayOfLuminance.push(arrayOfRGB[i].slice(4, arrayOfRGB[i].length-1).split(","))
+  }
+  // var luminValue = 0.299 * parseInt(colorArray[0]) + 0.587 * parseInt(colorArray[1]) + 0.114 * parseInt(colorArray[2]);
+  // return luminValue;
+
+  console.log(arrayOfLuminance);
+
+  // eventually push sliced converted luminance values into a new array , run math.max() on those to determine Winner
+  // type out arryofluminac[] 0-2, loop through and then run math.max on all of those variables
+  // seperate funciton that takes three argumeents (which is each max value of an array), spits out maximum Luminance
+
+  var lum1 = Math.max.apply(Math, arrayOfLuminance[0]); //226
+  var lum2 = Math.max.apply(Math, arrayOfLuminance[1]); //208
+  var lum3 = Math.max.apply(Math, arrayOfLuminance[2]); //211
+  determineWinner(lum1, lum2, lum3)
+
+  console.log('lum1: ' + lum1 + " lum2: " + lum2 + " lum3: " + lum3)
+  // var winner = Math.max(lum1,lum2,lum3);
+  // AddClass "winner" to div with highest LuminValue .append / AddClass winner??
+  // for loop
+}
+
+// write a function that takes in array of lUminance
+// Calculate the lumniValue for each array in the array
+function calcLum(someArray){
+  var array1 = someArray[0]
+  var array2 = someArray[1]
+  var array3 = someArray[2]
+  arrayOfCalcLuminance.push(parseLum(array1))
+
+}
+
+var arrayOfCalcLuminance = []
+
+function parseLum(colorArray){
+  var luminValue = 0.299 * parseInt(colorArray[0]) + 0.587 * parseInt(colorArray[1]) + 0.114 * parseInt(colorArray[2]);
+  return luminValue
+}
+
+function determineWinner(lum1,lum2,lum3) {
+  Math.max(lum1,lum2,lum3);
+  console.log(Math.max(lum1,lum2,lum3));
+}
