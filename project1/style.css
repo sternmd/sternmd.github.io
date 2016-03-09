@@ -1,5 +1,8 @@
 body{
   font-family: 'arcadeclassic';
+  color: white;
+  background-color: black;
+  overflow: hidden;
 }
 
 #wrapper {
