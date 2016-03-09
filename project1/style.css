@@ -3,6 +3,8 @@ body{
   color: white;
   background-color: black;
   overflow: hidden;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
 }
 
 #wrapper {
@@ -22,7 +24,7 @@ body{
     display: inline-block;*/
 }
 
-.red1, .red2, .red3 {
+#red1, #red2, #red3 {
   height: 33%;
 }
 
@@ -133,6 +135,15 @@ h1{
   width: 200px;
   top: 50px;
   left: 9px;
+}
+
+#counter {
+  font-size:40px;
+  position: absolute;
+  z-index: 0;
+  width: 200px;
+  top: 17px;
+  left: 190px;
 }
 
 @font-face {

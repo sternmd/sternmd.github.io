@@ -1,8 +1,20 @@
 var arrayOfDivColors = [];
-var arrayOfLuminance = [];
+var arrayOfRGBColors = [];
 var scoreCounter = 0;
 
 $( document ).ready(function() {
+
+
+function applyData(finalLumArray){
+  for (var i = 0; i < finalLumArray.length; i++) {
+    $('#red1').data("lumvalue",finalLumArray[0];
+    // $('#red2').data( "lumvalue", finalLumArray[1] );
+    // $('#red3').data( "lumvalue", finalLumArray[1] );
+    // $(#red).attr('data-lumvalue',finalLumArray[0]);
+  }
+}
+
+$('.red1').data('lumvalue')
 
 // Moves column IDs across screen.
 function loopRed() {
@@ -112,22 +124,18 @@ function randomViolet() {
   return 'rgb(' + 255  + ',' + 0 + ',' + randomColor() + ')';
 }
 
-// $("#red div :first").css("background-color",randomRed());
-// $("#red div :nth-child(2)").css("background-color",randomRed());
-// $("#red div :last").css("background-color",randomRed());
-
 //Injects randomized background colors to divs.
 
 // REDS
-$(".red1").each(function() {
+$("#red1").each(function() {
     $(this).css("background-color", randomRed());
 });
 
-$(".red2").each(function() {
+$("#red2").each(function() {
     $(this).css("background-color", randomRed());
 });
 
-$(".red3").each(function() {
+$("#red3").each(function() {
     $(this).css("background-color", randomRed());
 });
 
@@ -207,6 +215,7 @@ $(".violet2").each(function() {
 
 $(".violet3").each(function() {
     $(this).css("background-color", randomViolet());
+
 });
 
 // Extracts all RGB values that are applied to divs within columns into an arrayOfColors.
@@ -217,24 +226,14 @@ for (var inc = 0; inc < 3; inc++) {
 
 console.log(arrayOfDivColors);
 
-// Convert RGB values into LUMINANCE (perceived brightness units) and push those colors into a new arrayOfLuminance.
+//THIS RETURNS FINAL LUM ARRAY
 
 
-// If user clicks winnerDiv, then column disappears .remove() and add +1 to scoreCounter.
-// $('div class winner').click(function(){
-// var scoreCounter =+ 1;
-// (this).remove();
-// });
-
-// if $('#red').children('div').style.left == "0") {
-//             alert('gameover');
 
 // Set condition if wrong div is click, game over.
 
 // Set condition if column hits left side of screen, game over.
 
-// var offScreen = $('div#').css({
-//       top: 0,
 //       left: 0}); or if right = 100%
 //
 // var gameOver = $('#gameover').text("<center><h1>G A M E O V E R</h1><center>");
@@ -244,7 +243,7 @@ console.log(arrayOfDivColors);
 // }
 
 // Endlessly spawn new divs columns.
-// var new = $('#new');
+// var new = $('#new'); append?
 // new.style.position = "absolute";
 // new.style.left = $('div#:last-child').style.right.length() - 100px;
 // new.style.width: 100px;
@@ -252,50 +251,64 @@ console.log(arrayOfDivColors);
   // top:0px;
 });
 
-
-function colorSlicer(arrayOfRGB) {
-  // for loop through arrayOfDivColors,
+// This function can take the arrayOfDivColors (RGBs) and strips letters and parentheses.
+// The stripped RGBs are pushed into a new array called arrayOfRGBColors --
+function rgbStripper(arrayOfRGB) {
   for (var i = 0; i < 3; i++) {
-    arrayOfLuminance.push(arrayOfRGB[i].slice(4, arrayOfRGB[i].length-1).split(","))
+    arrayOfRGBColors.push(arrayOfRGB[i].slice(4, arrayOfRGB[i].length-1).split(","))
+    }
+    return arrayOfRGBColors
   }
-  // var luminValue = 0.299 * parseInt(colorArray[0]) + 0.587 * parseInt(colorArray[1]) + 0.114 * parseInt(colorArray[2]);
-  // return luminValue;
+// --> arrayOfRGBColors [ [219,0,0],[210,0,0],[213,0,0] ]
 
-  console.log(arrayOfLuminance);
+// Calculate the lumniValue for each RGB array in the array
+var arrayOfCalcLuminance = [];
 
-  // eventually push sliced converted luminance values into a new array , run math.max() on those to determine Winner
-  // type out arryofluminac[] 0-2, loop through and then run math.max on all of those variables
-  // seperate funciton that takes three argumeents (which is each max value of an array), spits out maximum Luminance
-
-  var lum1 = Math.max.apply(Math, arrayOfLuminance[0]); //226
-  var lum2 = Math.max.apply(Math, arrayOfLuminance[1]); //208
-  var lum3 = Math.max.apply(Math, arrayOfLuminance[2]); //211
-  determineWinner(lum1, lum2, lum3)
-
-  console.log('lum1: ' + lum1 + " lum2: " + lum2 + " lum3: " + lum3)
-  // var winner = Math.max(lum1,lum2,lum3);
-  // AddClass "winner" to div with highest LuminValue .append / AddClass winner??
-  // for loop
+function calcLuminance(someArray){
+  var array1 = someArray[0];
+  var array2 = someArray[1];
+  var array3 = someArray[2];
+  arrayOfCalcLuminance.push(parseLum(array1));
+  arrayOfCalcLuminance.push(parseLum(array2));
+  arrayOfCalcLuminance.push(parseLum(array3));
+  return arrayOfCalcLuminance
 }
-
-// write a function that takes in array of lUminance
-// Calculate the lumniValue for each array in the array
-function calcLum(someArray){
-  var array1 = someArray[0]
-  var array2 = someArray[1]
-  var array3 = someArray[2]
-  arrayOfCalcLuminance.push(parseLum(array1))
-
+// -->
+function winner(arrayCalcWinner){
+  Math.max.apply(Math, arrayCalcWinner)
 }
-
-var arrayOfCalcLuminance = []
-
+//this function takes an array of RGB values - [255,0,0] - and converts it into a single LuminValue - .
 function parseLum(colorArray){
   var luminValue = 0.299 * parseInt(colorArray[0]) + 0.587 * parseInt(colorArray[1]) + 0.114 * parseInt(colorArray[2]);
   return luminValue
 }
 
-function determineWinner(lum1,lum2,lum3) {
-  Math.max(lum1,lum2,lum3);
-  console.log(Math.max(lum1,lum2,lum3));
-}
+// var winner = Math.max(lum1,lum2,lum3);
+//   var lum1 = Math.max.apply(Math, arrayOfRGBColors[0]); //
+//   var lum2 = Math.max.apply(Math, arrayOfRGBColors[1]); //
+//   var lum3 = Math.max.apply(Math, arrayOfRGBColors[2]); //
+//
+// console.log('lum1: ' + lum1 + " lum2: " + lum2 + " lum3: " + lum3)
+//
+// function determineWinner(lum1,lum2,lum3) {
+//   Math.max(lum1,lum2,lum3);
+//   console.log(Math.max(lum1,lum2,lum3));
+// }
+
+
+// $('div').click(function(){
+//    $(this).parent().remove();
+// });
+
+// $('div').click(function() {
+//   $(this).parent().remove();}
+
+$('#red1').click(function(){
+   $(this).parent().remove();
+   $('#counter').html(function(i, val) { return +val+1 });
+  //  scoreCounter =+1;
+})
+// calcLuminance(rgbStripper(arrayOfDivColors))
+// if ($('div').css({right: 100%).prop('style').right == 100%){
+//   $('h1').append("<strong>GAMEOVER</strong>")
+// }
