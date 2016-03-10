@@ -112,6 +112,11 @@ h1{
   left: 9px;
 }
 
+#start {
+  display: visible;
+  z-index: 0;
+}
+
 #counter {
   font-size:38px;
   position: absolute;

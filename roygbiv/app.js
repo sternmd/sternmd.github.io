@@ -9,67 +9,26 @@ for (var inc = 0; inc < 3; inc++) {
   }
 }
 
-$( document ).ready(function() {
+function start(){
 
 // Moves column IDs across screen.
-function loopRed() {
-
-    $('#red').animate ({
-        right: '+=100%',
-    }, 15000, 'linear');
+function animate(id){
+  $(id).animate ({
+      right: '+=100%',
+  }, 15000, 'linear');
 }
-loopRed();
 
-
-function loopOrange() {
-
-    $('#orange').animate ({
-        right: '+=100%',
-    }, 15000, 'linear');
+animate('#red');
+animate('#orange');
+animate('#yellow');
+animate('#green');
+animate('#blue');
+animate('#indigo');
+animate('#violet');
 }
-loopOrange();
 
+$( document ).ready(function() {
 
-function loopYellow() {
-
-    $('#yellow').animate ({
-        right: '+=100%',
-    }, 15000, 'linear');
-}
-loopYellow();
-
-
-function loopGreen() {
-
-    $('#green').animate ({
-        right: '+=100%',
-    }, 15000, 'linear');
-}
-loopGreen();
-
-function loopBlue() {
-
-    $('#blue').animate ({
-        right: '+=100%',
-    }, 15000, 'linear');
-}
-loopBlue();
-
-function loopIndigo() {
-
-    $('#indigo').animate ({
-        right: '+=100%',
-    }, 15000, 'linear');
-}
-loopIndigo();
-
-function loopViolet() {
-
-    $('#violet').animate ({
-        right: '+=100%',
-    }, 15000, 'linear');
-}
-loopViolet();
 
 // Returns a random number between 1 and 50.
 function random() {
@@ -305,7 +264,10 @@ $('.violetbox').click(function(){
   } else $("#gameover").show() && $("body div").stop();
 })
 
-
+$('#start').click(function(){
+    start();
+    $(this).hide();
+})
 // Endlessly spawn new divs columns.
 // var new = $('#new'); append?
 // new.style.position = "absolute";
