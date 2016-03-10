@@ -127,7 +127,7 @@ h1{
   position: absolute;
   z-index: 1;
   width: 900px;
-  top: 250px;
+  top: 150px;
   left: 500px;
 }
 
@@ -137,8 +137,18 @@ h1{
   position: absolute;
   z-index: 1;
   width: 900px;
-  top: 250px;
+  top: 150px;
   left: 500px;
+}
+
+#treasure {
+  display: none;
+  font-size:100px;
+  position: absolute;
+  z-index: 1;
+  width: 900px;
+  top: 200px;
+  left: 725px;
 }
 
 @font-face {

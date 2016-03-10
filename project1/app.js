@@ -71,7 +71,7 @@ loopViolet();
 
 // Returns a random number between 1 and 50.
 function random() {
-  return Math.floor(Math.random() * 50);
+  return Math.floor(Math.random() * 100);
 };
 
 // Returns number ranging from 205 to 255, for RGB values.
@@ -385,9 +385,9 @@ $('.violetbox').click(function(){
   console.log($(this).data('lumvalue'))
   if($(this).data('lumvalue') === winner(allMyCalc)){
     clearArray();
-    $(this).parent().remove() && $("#victory").show();
+    $(this).parent().remove() && $("#victory").show() && $("#treasure").show();
     $('#counter').html(function(i, val) { return +val+1 });
-  }
+  } else $("#gameover").show() && $("body div").stop();
 })
 
 
