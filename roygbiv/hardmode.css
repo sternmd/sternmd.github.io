@@ -1,3 +1,5 @@
+/*HARDMODE*/
+
 body{
   font-family: 'arcadeclassic';
   color: white;
@@ -11,31 +13,20 @@ body{
   display: inline-block;
 }
 
-#red {
+#white {
   position: absolute;
   width: 100px;
   height: 900px;
   top:0px;
   right:0px;
+  color: black;
 }
 
-#red1, #red2, #red3 {
+#white1, #white2, #white3 {
   height: 33%;
 }
 
-#orange {
-    position: absolute;
-    width: 100px;
-    height: 900px;
-    top:0px;
-    right:-100px;
-}
-
-#orange1, #orange2, #orange3 {
-  height: 33%;
-}
-
-#yellow {
+#gray {
   position: absolute;
   width: 100px;
   height: 900px;
@@ -43,55 +34,19 @@ body{
   right:-200px;
 }
 
-#yellow1, #yellow2, #yellow3 {
+#gray1, #gray2, #gray3 {
   height: 33%;
 }
 
-#green {
-  position: absolute;
-  width: 100px;
-  height: 900px;
-  top:0px;
-  right:-300px;
+#black {
+    position: absolute;
+    width: 100px;
+    height: 900px;
+    top:0px;
+    right:-100px;
 }
 
-#green1, #green2, #green3 {
-  height: 33%;
-}
-
-#blue {
-  position: absolute;
-  width: 100px;
-  height: 900px;
-  top:0px;
-  right:-400px;
-}
-
-#blue1, #blue2, #blue3 {
-  height: 33%;
-}
-
-#indigo {
-  position: absolute;
-  width: 100px;
-  height: 900px;
-  top:0px;
-  right:-500px;
-}
-
-#indigo1, #indigo2, #indigo3 {
-  height: 33%;
-}
-
-#violet {
-  position: absolute;
-  width: 100px;
-  height: 900px;
-  top:0px;
-  right:-600px;
-}
-
-#violet1, #violet2, #violet3 {
+#black1, #black2, #black3 {
   height: 33%;
 }
 
@@ -143,7 +98,7 @@ h1{
   z-index: 1;
   width: 900px;
   top: 150px;
-  left: 500px;
+  left: 250px;
 }
 
 #treasure {
@@ -156,14 +111,13 @@ h1{
   left: 725px;
 }
 
-#skull {
-  display: none;
-  font-size:100px;
+#skullnbones {
+  display: visible;
   position: absolute;
-  z-index: 2;
-  width: 25px;
-  bottom: 235px;
-  left: 980px;
+  z-index: 1;
+  width: 900px;
+  bottom: 0;
+  left: 0;
 }
 
 @font-face {

@@ -259,7 +259,7 @@ $('.violetbox').click(function(){
   console.log($(this).data('lumvalue'))
   if($(this).data('lumvalue') === winner(allMyCalc)){
     clearArray();
-    $(this).parent().remove() && $("#victory").show() && $("#treasure").show();
+    $(this).parent().remove() && $("#victory").show() && $("#treasure").show() && $("#skull").show();
     $('#counter').html(function(i, val) { return +val+1 });
   } else $("#gameover").show() && $("body div").stop();
 })
