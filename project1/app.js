@@ -293,8 +293,25 @@ $('.redbox').click(function(){
   if($(this).data('lumvalue') === winner(allMyCalc)){
     $(this).parent().remove();
     $('#counter').html(function(i, val) { return +val+1 });
-  } else $("#gameover").show();
+  } else $("#gameover").show() && $("body div").stop();
 })
+
+$('.redbox').click(function(){
+  arrayOfDivColors     = [];
+  arrayOfRGBColors     = [];
+  arrayOfCalcLuminance = [];
+})
+
+// var right = $('#red').css('right');
+// if (right == '100%') {
+//     alert("it's blue!")};
+// if( $('#red').css('right') === '100%' ) {
+//   console.log('ok');
+// }
+
+// if ($('body div').prop('style').right == 100%) {
+//   alert('over');
+// }
 
 $('.orangebox').click(function(){
   applyData(calcLuminance(rgbStripper(arrayOfDivColors)))
@@ -377,11 +394,6 @@ $('.violetbox').click(function(){
 })
 
 
-// calcLuminance(rgbStripper(arrayOfDivColors))
-// if ($('div').css({right: 100%).prop('style').right == 100%){
-//   $('h1').append("<strong>GAMEOVER</strong>")
-// }
-
 // Endlessly spawn new divs columns.
 // var new = $('#new'); append?
 // new.style.position = "absolute";
@@ -390,14 +402,8 @@ $('.violetbox').click(function(){
 // height: 900px;
 // top:0px;
 
-// Set condition if wrong div is click, game over.
+//DONE Set condition if wrong div is click, game over.
 
 // Set condition if column hits left side of screen, game over.
 
 //       left: 0}); or if right = 100%
-//
-// var gameOver = $('#gameover').text("<center><h1>G A M E O V E R</h1><center>");
-//
-// if OffScreen {
-//   return gameOver;
-// }
