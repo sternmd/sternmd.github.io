@@ -31,7 +31,7 @@ body{
     right:-100px;
 }
 
-.orange1, .orange2, .orange3 {
+#orange1, #orange2, #orange3 {
   height: 33%;
 }
 
@@ -43,7 +43,7 @@ body{
   right:-200px;
 }
 
-.yellow1, .yellow2, .yellow3 {
+#yellow1, #yellow2, #yellow3 {
   height: 33%;
 }
 
@@ -55,7 +55,7 @@ body{
   right:-300px;
 }
 
-.green1, .green2, .green3 {
+#green1, #green2, #green3 {
   height: 33%;
 }
 
@@ -67,7 +67,7 @@ body{
   right:-400px;
 }
 
-.blue1, .blue2, .blue3 {
+#blue1, #blue2, #blue3 {
   height: 33%;
 }
 
@@ -79,7 +79,7 @@ body{
   right:-500px;
 }
 
-.indigo1, .indigo2, .indigo3 {
+#indigo1, #indigo2, #indigo3 {
   height: 33%;
 }
 
@@ -91,7 +91,7 @@ body{
   right:-600px;
 }
 
-.violet1, .violet2, .violet3 {
+#violet1, #violet2, #violet3 {
   height: 33%;
 }
 

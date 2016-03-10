@@ -64,10 +64,6 @@ function loopViolet() {
 }
 loopViolet();
 
-    // $("#violet").animate({
-    //     'marginLeft': '-=100%'
-    // }, 15000);
-
 // Returns a random number between 1 and 50.
 function random() {
   return Math.floor(Math.random() * 50);
@@ -128,80 +124,80 @@ $("#red3").each(function() {
 });
 
 //ORANGES
-$(".orange1").each(function() {
+$("#orange1").each(function() {
     $(this).css("background-color", randomOrange());
 });
 
-$(".orange2").each(function() {
+$("#orange2").each(function() {
     $(this).css("background-color", randomOrange());
 });
 
-$(".orange3").each(function() {
+$("#orange3").each(function() {
     $(this).css("background-color", randomOrange());
 });
 
 //YELLOW
-$(".yellow1").each(function() {
+$("#yellow1").each(function() {
     $(this).css("background-color", randomYellow());
 });
 
-$(".yellow2").each(function() {
+$("#yellow2").each(function() {
     $(this).css("background-color", randomYellow());
 });
 
-$(".yellow3").each(function() {
+$("#yellow3").each(function() {
     $(this).css("background-color", randomYellow());
 });
 
 //GREEN
-$(".green1").each(function() {
+$("#green1").each(function() {
     $(this).css("background-color", randomGreen());
 });
 
-$(".green2").each(function() {
+$("#green2").each(function() {
     $(this).css("background-color", randomGreen());
 });
 
-$(".green3").each(function() {
+$("#green3").each(function() {
     $(this).css("background-color", randomGreen());
 });
 
 //BLUE
-$(".blue1").each(function() {
+$("#blue1").each(function() {
     $(this).css("background-color", randomBlue());
 });
 
-$(".blue2").each(function() {
+$("#blue2").each(function() {
     $(this).css("background-color", randomBlue());
 });
 
-$(".blue3").each(function() {
+$("#blue3").each(function() {
     $(this).css("background-color", randomBlue());
 });
 
 //INDIGO
-$(".indigo1").each(function() {
+$("#indigo1").each(function() {
     $(this).css("background-color", randomIndigo());
 });
 
-$(".indigo2").each(function() {
+$("#indigo2").each(function() {
     $(this).css("background-color", randomIndigo());
 });
 
-$(".indigo3").each(function() {
+$("#indigo3").each(function() {
     $(this).css("background-color", randomIndigo());
 });
 
 //VIOLET
-$(".violet1").each(function() {
+$("#violet1").each(function() {
     $(this).css("background-color", randomViolet());
 });
 
-$(".violet2").each(function() {
+$("#violet2").each(function() {
     $(this).css("background-color", randomViolet());
 });
 
-$(".violet3").each(function() {
+$("#violet3").each(function() {
     $(this).css("background-color", randomViolet());
 
 });
@@ -212,9 +208,39 @@ for (var inc = 0; inc < 3; inc++) {
   arrayOfDivColors.push(($(redColors[inc]).prop('style').backgroundColor));
   }
 
+var orangeColors = $('#orange').children('div');
+for (var inc = 0; inc < 3; inc++) {
+  arrayOfDivColors.push(($(orangeColors[inc]).prop('style').backgroundColor));
+  }
+
+var yellowColors = $('#yellow').children('div');
+for (var inc = 0; inc < 3; inc++) {
+  arrayOfDivColors.push(($(yellowColors[inc]).prop('style').backgroundColor));
+  }
+
+var greenColors = $('#green').children('div');
+for (var inc = 0; inc < 3; inc++) {
+  arrayOfDivColors.push(($(greenColors[inc]).prop('style').backgroundColor));
+  }
+
+var blueColors = $('#blue').children('div');
+for (var inc = 0; inc < 3; inc++) {
+  arrayOfDivColors.push(($(blueColors[inc]).prop('style').backgroundColor));
+  }
+
+var indigoColors = $('#indigo').children('div');
+for (var inc = 0; inc < 3; inc++) {
+  arrayOfDivColors.push(($(indigoColors[inc]).prop('style').backgroundColor));
+  }
+
+var violetColors = $('#violet').children('div');
+for (var inc = 0; inc < 3; inc++) {
+  arrayOfDivColors.push(($(violetColors[inc]).prop('style').backgroundColor));
+  }
+
 console.log(arrayOfDivColors);
 
-});
+}); // End of onload
 
 // This function can take the arrayOfDivColors (RGBs) and strips letters and parentheses.
 // The stripped RGBs are pushed into a new array called arrayOfRGBColors --
@@ -267,9 +293,89 @@ $('.redbox').click(function(){
   if($(this).data('lumvalue') === winner(allMyCalc)){
     $(this).parent().remove();
     $('#counter').html(function(i, val) { return +val+1 });
-  }
-
+  } else $("#gameover").show();
 })
+
+$('.orangebox').click(function(){
+  applyData(calcLuminance(rgbStripper(arrayOfDivColors)))
+  var allMyCalc = calcLuminance(rgbStripper(arrayOfDivColors))
+  console.log($(this).data('lumvalue'))
+  if($(this).data('lumvalue') === winner(allMyCalc)){
+    $(this).parent().remove();
+    $('#counter').html(function(i, val) { return +val+1 });
+  }
+})
+
+$('.yellowbox').click(function(){
+  applyData(calcLuminance(rgbStripper(arrayOfDivColors)))
+  var allMyCalc = calcLuminance(rgbStripper(arrayOfDivColors))
+  console.log($(this).data('lumvalue'))
+  if($(this).data('lumvalue') === winner(allMyCalc)){
+    $(this).parent().remove();
+    $('#counter').html(function(i, val) { return +val+1 });
+  }
+})
+
+$('.greenbox').click(function(){
+  applyData(calcLuminance(rgbStripper(arrayOfDivColors)))
+  var allMyCalc = calcLuminance(rgbStripper(arrayOfDivColors))
+  console.log($(this).data('lumvalue'))
+  if($(this).data('lumvalue') === winner(allMyCalc)){
+    $(this).parent().remove();
+    $('#counter').html(function(i, val) { return +val+1 });
+  }
+})
+
+$('.bluebox').click(function(){
+  applyData(calcLuminance(rgbStripper(arrayOfDivColors)))
+  var allMyCalc = calcLuminance(rgbStripper(arrayOfDivColors))
+  console.log($(this).data('lumvalue'))
+  if($(this).data('lumvalue') === winner(allMyCalc)){
+    $(this).parent().remove();
+    $('#counter').html(function(i, val) { return +val+1 });
+  }
+})
+
+$('.greenbox').click(function(){
+  applyData(calcLuminance(rgbStripper(arrayOfDivColors)))
+  var allMyCalc = calcLuminance(rgbStripper(arrayOfDivColors))
+  console.log($(this).data('lumvalue'))
+  if($(this).data('lumvalue') === winner(allMyCalc)){
+    $(this).parent().remove();
+    $('#counter').html(function(i, val) { return +val+1 });
+  }
+})
+
+$('.bluebox').click(function(){
+  applyData(calcLuminance(rgbStripper(arrayOfDivColors)))
+  var allMyCalc = calcLuminance(rgbStripper(arrayOfDivColors))
+  console.log($(this).data('lumvalue'))
+  if($(this).data('lumvalue') === winner(allMyCalc)){
+    $(this).parent().remove();
+    $('#counter').html(function(i, val) { return +val+1 });
+  }
+})
+
+$('.indigobox').click(function(){
+  applyData(calcLuminance(rgbStripper(arrayOfDivColors)))
+  var allMyCalc = calcLuminance(rgbStripper(arrayOfDivColors))
+  console.log($(this).data('lumvalue'))
+  if($(this).data('lumvalue') === winner(allMyCalc)){
+    $(this).parent().remove();
+    $('#counter').html(function(i, val) { return +val+1 });
+  }
+})
+
+$('.violetbox').click(function(){
+  applyData(calcLuminance(rgbStripper(arrayOfDivColors)))
+  var allMyCalc = calcLuminance(rgbStripper(arrayOfDivColors))
+  console.log($(this).data('lumvalue'))
+  if($(this).data('lumvalue') === winner(allMyCalc)){
+    $(this).parent().remove();
+    $('#counter').html(function(i, val) { return +val+1 });
+  }
+})
+
 
 // calcLuminance(rgbStripper(arrayOfDivColors))
 // if ($('div').css({right: 100%).prop('style').right == 100%){
