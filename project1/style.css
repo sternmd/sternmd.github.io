@@ -131,6 +131,16 @@ h1{
   left: 500px;
 }
 
+#victory {
+  display: none;
+  font-size:100px;
+  position: absolute;
+  z-index: 1;
+  width: 900px;
+  top: 250px;
+  left: 500px;
+}
+
 @font-face {
     font-family:'arcadeclassic';
     src: url(fonts/arcadeclassic-webfont.eot);

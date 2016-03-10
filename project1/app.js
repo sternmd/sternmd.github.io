@@ -1,7 +1,12 @@
 var arrayOfDivColors = [];
 var arrayOfRGBColors = [];
 var scoreCounter = 0;
-
+function pushBackground(id1, div) {
+var colors = $(id1).children(div);
+for (var inc = 0; inc < 3; inc++) {
+  arrayOfDivColors.push(($(colors[inc]).prop('style').backgroundColor));
+  }
+}
 $( document ).ready(function() {
 
 // Moves column IDs across screen.
@@ -203,40 +208,37 @@ $("#violet3").each(function() {
 });
 
 // Extracts all RGB values that are applied to divs within columns into an arrayOfColors.
-var redColors = $('#red').children('div');
-for (var inc = 0; inc < 3; inc++) {
-  arrayOfDivColors.push(($(redColors[inc]).prop('style').backgroundColor));
-  }
 
-var orangeColors = $('#orange').children('div');
-for (var inc = 0; inc < 3; inc++) {
-  arrayOfDivColors.push(($(orangeColors[inc]).prop('style').backgroundColor));
-  }
 
-var yellowColors = $('#yellow').children('div');
-for (var inc = 0; inc < 3; inc++) {
-  arrayOfDivColors.push(($(yellowColors[inc]).prop('style').backgroundColor));
-  }
-
-var greenColors = $('#green').children('div');
-for (var inc = 0; inc < 3; inc++) {
-  arrayOfDivColors.push(($(greenColors[inc]).prop('style').backgroundColor));
-  }
-
-var blueColors = $('#blue').children('div');
-for (var inc = 0; inc < 3; inc++) {
-  arrayOfDivColors.push(($(blueColors[inc]).prop('style').backgroundColor));
-  }
-
-var indigoColors = $('#indigo').children('div');
-for (var inc = 0; inc < 3; inc++) {
-  arrayOfDivColors.push(($(indigoColors[inc]).prop('style').backgroundColor));
-  }
-
-var violetColors = $('#violet').children('div');
-for (var inc = 0; inc < 3; inc++) {
-  arrayOfDivColors.push(($(violetColors[inc]).prop('style').backgroundColor));
-  }
+// var orangeColors = $('#orange').children('.orangebox');
+// for (var inc = 0; inc < 3; inc++) {
+//   arrayOfDivColors.push(($(orangeColors[inc]).prop('style').backgroundColor));
+//   }
+//
+// var yellowColors = $('#yellow').children('.yellowbox');
+// for (var inc = 0; inc < 3; inc++) {
+//   arrayOfDivColors.push(($(yellowColors[inc]).prop('style').backgroundColor));
+//   }
+//
+// var greenColors = $('#green').children('.greenbox');
+// for (var inc = 0; inc < 3; inc++) {
+//   arrayOfDivColors.push(($(greenColors[inc]).prop('style').backgroundColor));
+//   }
+//
+// var blueColors = $('#blue').children('.bluebox');
+// for (var inc = 0; inc < 3; inc++) {
+//   arrayOfDivColors.push(($(blueColors[inc]).prop('style').backgroundColor));
+//   }
+//
+// var indigoColors = $('#indigo').children('.indigobox');
+// for (var inc = 0; inc < 3; inc++) {
+//   arrayOfDivColors.push(($(indigoColors[inc]).prop('style').backgroundColor));
+//   }
+//
+// var violetColors = $('#violet').children('.violetbox');
+// for (var inc = 0; inc < 3; inc++) {
+//   arrayOfDivColors.push(($(violetColors[inc]).prop('style').backgroundColor));
+//   }
 
 console.log(arrayOfDivColors);
 
@@ -276,119 +278,114 @@ function parseLum(colorArray){
 }
 
 // This function applies respective luminValue to the data value of the class.
-function applyData(finalLumArray){
+function applyData(finalLumArray, id1, id2, id3){
   for (var i = 0; i < finalLumArray.length; i++) {
-    $('#red1').data("lumvalue",finalLumArray[0]);
-    $('#red2').data("lumvalue",finalLumArray[1]);
-    $('#red3').data("lumvalue",finalLumArray[2]);
+    $(id1).data("lumvalue",finalLumArray[0]);
+    $(id2).data("lumvalue",finalLumArray[1]);
+    $(id3).data("lumvalue",finalLumArray[2]);
   }
 }
 
 // ON CLICK EVENTS
 
+function clearArray() {
+  arrayOfDivColors     = [];
+  arrayOfRGBColors     = [];
+  arrayOfCalcLuminance = [];
+}
+
 $('.redbox').click(function(){
-  applyData(calcLuminance(rgbStripper(arrayOfDivColors)))
+  pushBackground("#red", ".redbox");
+  applyData(calcLuminance(rgbStripper(arrayOfDivColors)), "#red1", "#red2", "#red3")
   var allMyCalc = calcLuminance(rgbStripper(arrayOfDivColors))
   console.log($(this).data('lumvalue'))
   if($(this).data('lumvalue') === winner(allMyCalc)){
     $(this).parent().remove();
+    // clearArray();
     $('#counter').html(function(i, val) { return +val+1 });
   } else $("#gameover").show() && $("body div").stop();
 })
 
-$('.redbox').click(function(){
-  arrayOfDivColors     = [];
-  arrayOfRGBColors     = [];
-  arrayOfCalcLuminance = [];
-})
-
-// var right = $('#red').css('right');
-// if (right == '100%') {
-//     alert("it's blue!")};
-// if( $('#red').css('right') === '100%' ) {
-//   console.log('ok');
-// }
-
-// if ($('body div').prop('style').right == 100%) {
-//   alert('over');
-// }
-
 $('.orangebox').click(function(){
-  applyData(calcLuminance(rgbStripper(arrayOfDivColors)))
+  pushBackground("#orange", ".orangebox");
+  applyData(calcLuminance(rgbStripper(arrayOfDivColors)), "#orange1", "#orange2", "#orange3")
   var allMyCalc = calcLuminance(rgbStripper(arrayOfDivColors))
   console.log($(this).data('lumvalue'))
   if($(this).data('lumvalue') === winner(allMyCalc)){
     $(this).parent().remove();
+    clearArray();
     $('#counter').html(function(i, val) { return +val+1 });
-  }
+  } else $("#gameover").show() && $("body div").stop();
 })
 
 $('.yellowbox').click(function(){
-  applyData(calcLuminance(rgbStripper(arrayOfDivColors)))
+  pushBackground("#yellow", ".yellowbox");
+  applyData(calcLuminance(rgbStripper(arrayOfDivColors)), "#yellow1", "#yellow2", "#yellow3")
   var allMyCalc = calcLuminance(rgbStripper(arrayOfDivColors))
   console.log($(this).data('lumvalue'))
   if($(this).data('lumvalue') === winner(allMyCalc)){
     $(this).parent().remove();
+    clearArray();
     $('#counter').html(function(i, val) { return +val+1 });
-  }
+  } else $("#gameover").show() && $("body div").stop();
 })
 
 $('.greenbox').click(function(){
-  applyData(calcLuminance(rgbStripper(arrayOfDivColors)))
+  pushBackground("#green", ".greenbox");
+  applyData(calcLuminance(rgbStripper(arrayOfDivColors)), "#green1", "#green2", "#green3")
   var allMyCalc = calcLuminance(rgbStripper(arrayOfDivColors))
   console.log($(this).data('lumvalue'))
   if($(this).data('lumvalue') === winner(allMyCalc)){
     $(this).parent().remove();
+    clearArray();
     $('#counter').html(function(i, val) { return +val+1 });
-  }
+  } else $("#gameover").show() && $("body div").stop();
 })
 
 $('.bluebox').click(function(){
-  applyData(calcLuminance(rgbStripper(arrayOfDivColors)))
+  pushBackground("#blue", ".bluebox");
+  applyData(calcLuminance(rgbStripper(arrayOfDivColors)), "#blue1", "#blue2", "#blue3")
   var allMyCalc = calcLuminance(rgbStripper(arrayOfDivColors))
   console.log($(this).data('lumvalue'))
   if($(this).data('lumvalue') === winner(allMyCalc)){
     $(this).parent().remove();
+    clearArray();
     $('#counter').html(function(i, val) { return +val+1 });
-  }
+  } else $("#gameover").show() && $("body div").stop();
 })
 
-$('.greenbox').click(function(){
-  applyData(calcLuminance(rgbStripper(arrayOfDivColors)))
+$('.purplebox').click(function(){
+  pushBackground("#purple", ".purplebox");
+  applyData(calcLuminance(rgbStripper(arrayOfDivColors)), "#purple1", "#purple2", "#purple3")
   var allMyCalc = calcLuminance(rgbStripper(arrayOfDivColors))
   console.log($(this).data('lumvalue'))
   if($(this).data('lumvalue') === winner(allMyCalc)){
     $(this).parent().remove();
+    clearArray();
     $('#counter').html(function(i, val) { return +val+1 });
-  }
-})
-
-$('.bluebox').click(function(){
-  applyData(calcLuminance(rgbStripper(arrayOfDivColors)))
-  var allMyCalc = calcLuminance(rgbStripper(arrayOfDivColors))
-  console.log($(this).data('lumvalue'))
-  if($(this).data('lumvalue') === winner(allMyCalc)){
-    $(this).parent().remove();
-    $('#counter').html(function(i, val) { return +val+1 });
-  }
+  } else $("#gameover").show() && $("body div").stop();
 })
 
 $('.indigobox').click(function(){
-  applyData(calcLuminance(rgbStripper(arrayOfDivColors)))
+  pushBackground("#indigo", ".indigobox");
+  applyData(calcLuminance(rgbStripper(arrayOfDivColors)), "#indigo1", "#indigo2", "#indigo3")
   var allMyCalc = calcLuminance(rgbStripper(arrayOfDivColors))
   console.log($(this).data('lumvalue'))
   if($(this).data('lumvalue') === winner(allMyCalc)){
     $(this).parent().remove();
+    clearArray();
     $('#counter').html(function(i, val) { return +val+1 });
-  }
+  } else $("#gameover").show() && $("body div").stop();
 })
 
 $('.violetbox').click(function(){
-  applyData(calcLuminance(rgbStripper(arrayOfDivColors)))
+  pushBackground("#violet", ".violetbox");
+  applyData(calcLuminance(rgbStripper(arrayOfDivColors)), "#violet1", "#violet2", "#violet3")
   var allMyCalc = calcLuminance(rgbStripper(arrayOfDivColors))
   console.log($(this).data('lumvalue'))
   if($(this).data('lumvalue') === winner(allMyCalc)){
-    $(this).parent().remove();
+    clearArray();
+    $(this).parent().remove() && $("#victory").show();
     $('#counter').html(function(i, val) { return +val+1 });
   }
 })
@@ -403,7 +400,19 @@ $('.violetbox').click(function(){
 // top:0px;
 
 //DONE Set condition if wrong div is click, game over.
-
+// Make columns move off screen!
 // Set condition if column hits left side of screen, game over.
+// Generate new divs.
 
 //       left: 0}); or if right = 100%
+
+// var right = $('#red').css('right');
+// if (right == '100%') {
+//     alert("it's blue!")};
+// if( $('#red').css('right') === '100%' ) {
+//   console.log('ok');
+// }
+
+// if ($('body div').prop('style').right == 100%) {
+//   alert('over');
+// }
