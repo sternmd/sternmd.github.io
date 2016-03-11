@@ -88,11 +88,12 @@ Indigo: rgb(120, 0, 255);
 Violet: rgb(255, 0, 255);
 /* Random indigo range: rgb(255, 0 , 195-255) */
 ```
+
 Functions that return a random RGB values for the ranges above:
 ```js
 
 function random() {
-  return Math.floor(Math.random() * 100);
+  return Math.floor(Math.random() * 60);
 };  
 
 function randomColor() {
@@ -119,6 +120,35 @@ function roygbiv(){
 
 };
 
+```
+
+Function Injects randomized background colors into divs.
+
+```js
+function injection(id1, backgroundColor) {
+  $(id1).each(function() {
+      $(this).css("background-color", backgroundColor());
+  });
+}
+
+// Inject random reds...
+injection("#red1", randomRed);
+injection("#red2", randomRed);
+injection("#red3", randomRed);
+
+//...etc
+
+```
+
+Function loops through columns' children and grabs random colors that were just applied (injection), then stores those rgb values into an array.
+
+```js
+function pushBackground(id1, div) {
+var colors = $(id1).children(div);
+for (var inc = 0; inc < 3; inc++) {
+  arrayOfDivColors.push(($(colors[inc]).prop('style').backgroundColor));
+  }
+}
 ```
 Function that strips RGB strings and pushes values into an array:
 
