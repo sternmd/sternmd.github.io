@@ -184,6 +184,8 @@ User can unlock easter egg Hardmode upon winning the first round.
 
 * Set condition (with 2D collision) if any column touches left side of screen, then trigger animation.stop() and display GAMEOVER text.
 
+* Not enough time to clean up all repetitive JS code & set mobile responsiveness.
+
 * Set a function to dynamically create new divs.
 
-* Clean up remaining repetitive code & set mobile responsiveness.
+* Make new levels and higher difficulties.
