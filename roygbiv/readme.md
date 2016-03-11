@@ -6,7 +6,7 @@
 
 Technologies used: HTML5/CSS3, Javascript, & jQuery.
 
-Installation/compatibility: Playable of Google Chrome. Best played in full screen.
+Installation/compatibility: Google Chrome. Best played in full-screen.
 
 ROYGBIV (pronounced [ROY-JEE-BIV]) is a color-matching puzzle game. The goal of the game is for a user to determine the brightest colored row in a moving stack of rows. ROYGBIV is a one-player game, but can be multiplayer (users take turns) with the purpose of a single user gaining the highest score. The player with the best colorvision wins!
 
