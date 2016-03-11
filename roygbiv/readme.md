@@ -55,8 +55,6 @@ ROYGBIV (pronounced [ROY-JEE-BIV]) is a color-matching puzzle game. The goal of 
 
 * Program a simple scoreCounter with jQuery & CSS.
 
-* Set on.click if statement for if click matches winner, then trigger column .remove() and scoreCounter +1.
-
 * Set on.click if statement for if click matches (===) winner data value, then trigger column .remove() and scoreCounter == +1.
 
 * Set on.click if statement for if click does not match (!===) winner data value, then trigger animation.stop() to sotop all movement and display GAMEOVER text.
