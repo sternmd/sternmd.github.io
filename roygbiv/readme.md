@@ -1,12 +1,14 @@
-# ROYGBIV: THE GAME
+# [ROYGBIV: THE GAME](https://sternmd.github.io/roygbiv/index.html)
 
- Explanations of the game, technologies used, the approach taken, installation instructions, unsolved problems, etc.
+![Roygbiv](http://s23.postimg.org/bp0prf97v/Screen_Shot_2016_03_11_at_9_34_34_AM.png)
 
 ## OUTLINE
 
-ROYGBIV (pronounced [ROY-JEE-BIV]) is a color-matching puzzle game. The goal of the game is for a user to determine the brightest colored row in a moving stack of rows, before the stacks hit the opposite edge of the window.
+Technologies used: HTML5/CSS3, Javascript, & jQuery.
 
-Technologies used include HTML5/CSS3, Javascript, & jQuery.
+Installation/compatibility: Playable of Google Chrome. Best played in full screen.
+
+ROYGBIV (pronounced [ROY-JEE-BIV]) is a color-matching puzzle game. The goal of the game is for a user to determine the brightest colored row in a moving stack of rows. ROYGBIV is a one-player game, but can be multiplayer (users take turns) with the purpose of a single user gaining the highest score. The player with the best colorvision wins!
 
 ## RULES
 
@@ -23,13 +25,11 @@ Technologies used include HTML5/CSS3, Javascript, & jQuery.
   * Violet
 
 
-* Each column is comprised of 3 rows, which have a random height. Each of the rows has a slight different shades of the respective color of the row. For example, the RED column will contain 3 different shades of the color red such as (255,0,0), (225, 0, 0), and (200, 0, 0).
+* Each column is comprised of 3 rows, which have equal height. Each of the rows has a slightly different hue of the respective color of the column. For example, the RED column will contain 3 different shades of the color red such as (255,0,0), (225, 0, 0), and (200, 0, 0).
 
-* Each column disappears after the user correctly clicks on the brightest colored row, and the user receives +1 point. The user can only click on 1 of the 3 rows in the farthest left column.
+* Each column disappears after the user correctly clicks on the brightest colored row, and the user receives +1 point. The player has only 1 try per each column to receive the point.
 
-* If the user clicks the incorrectly colored row, then the game is over. If the farthest left column hits the left side of the screen, then the game is over.
-
-* ROYGBIV is a one-player game, but can be multiplayer with the purpose of a single user gaining the highest score. The player with the best colorvision wins!
+* If the user clicks the incorrectly colored row, then the game is over.
 
 ## SIMPLE PSEUDOCODE
 
@@ -37,7 +37,7 @@ Technologies used include HTML5/CSS3, Javascript, & jQuery.
 
 * Use jQuery .animate() and HTML/CSS to move columns across the screen, from left to right.
 
-* Write a Math.random color function that satisfies the needs of RGB colors ranging 100 units. Write a plusOrMinus function for colors that need units added to their base.
+* Write a Math.random color function that satisfies the needs of RGB colors ranging ~60 units. Write a plusOrMinus function for colors that need units added to their base.
 
 * Write function to set a random color to a column's respective divs. Ranges & string concatenation needed.
 
@@ -59,14 +59,15 @@ Technologies used include HTML5/CSS3, Javascript, & jQuery.
 
 * Set on.click if statement for if click matches (===) winner data value, then trigger column .remove() and scoreCounter == +1.
 
-* Set on.click if statement for if click does not match (!===) winner data value, then trigger animation.stop() and display GAMEOVER text.
+* Set on.click if statement for if click does not match (!===) winner data value, then trigger animation.stop() to sotop all movement and display GAMEOVER text.
 
 * Set on.click if statement for if click matches (===) winner data value for the last column (violet), then trigger column .remove(), scoreCounter == +1, and display VICTORY text.
 
-* Set condition if any column touches left side of screen, then trigger animation.stop() and display GAMEOVER text.
+* Create a start() function/button to start the game.
 
-### SIDENOTES & HIGHLIGHTS
+### SIDENOTES, HIGHLIGHTS, & APPROACHES
 
+Calculated rgb value color ranges for "random" colors:
 ```CSS
 Pure Red: rgb(255, 0, 0);
 /* Random red range: rgb(195-255, 0 , 0) */
@@ -121,19 +122,68 @@ function roygbiv(){
 };
 
 ```
-Function that strips RGB strings and pushed the bare values into an array:
+Function that strips RGB strings and pushes values into an array:
 
 ```js
 function rgbStripper(arrayOfRGB) {
   for (var i = 0; i < 3; i++) {
     arrayOfRGBColors.push(arrayOfRGB[i].slice(4, arrayOfRGB[i].length-1).split(","))
     }
+
+    // --> arrayOfRGBColors = [ [219,0,0],[210,0,0],[213,0,0] ]
 ```
 
-Function that converts an array of RGB values - i.e. [255,0,0] - into single single luminence values.
+Function evaluates array of 3 RGB value arrays and converts them into single array of luminance values (see function parseLum).
+```js
+var arrayOfCalcLuminance = [];
+
+function calcLuminance(someArray){
+  var array1 = someArray[0];
+  var array2 = someArray[1];
+  var array3 = someArray[2];
+  arrayOfCalcLuminance.push(parseLum(array1));
+  arrayOfCalcLuminance.push(parseLum(array2));
+  arrayOfCalcLuminance.push(parseLum(array3));
+  return arrayOfCalcLuminance
+}
+// --> arrayOfCalcLuminace = [57.64, 63.21, 54,76]
+```
+
+Function converts an array of RGB values - i.e. [255,0,0] - into single single luminance values.
 ```js
 function parseLum(colorArray){
   var luminValue = 0.299 * parseInt(colorArray[0]) + 0.587 * parseInt(colorArray[1]) + 0.114 * parseInt(colorArray[2]);
   return luminValue
 }
 ```
+
+Function passes an array of luminance values and determines the highest value. That value is the "brightest" color.
+```js
+function winner(arrayCalcWinner){
+    return Math.max.apply(Math, arrayCalcWinner)
+}
+```
+
+Function applies respective luminValue to the data value of the class.
+```js
+
+function applyData(finalLumArray, id1, id2, id3){
+  for (var i = 0; i < finalLumArray.length; i++) {
+    $(id1).data("lumvalue",finalLumArray[0]);
+    $(id2).data("lumvalue",finalLumArray[1]);
+    $(id3).data("lumvalue",finalLumArray[2]);
+  }
+}
+```
+User can unlock easter egg Hardmode upon winning the first round.
+
+![Roygbiv Hardmode](http://s7.postimg.org/gplyzn7h7/Screen_Shot_2016_03_11_at_9_52_33_AM.png)
+
+
+## UNSOLVED PROBLEMS
+
+* Set condition (with 2D collision) if any column touches left side of screen, then trigger animation.stop() and display GAMEOVER text.
+
+* Set a function to dynamically create new divs.
+
+* Clean up remaining repetitive code & set mobile responsiveness.

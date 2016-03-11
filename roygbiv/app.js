@@ -32,7 +32,7 @@ $( document ).ready(function() {
 
 // Returns a random number between 1 and 50.
 function random() {
-  return Math.floor(Math.random() * 70);
+  return Math.floor(Math.random() * 60);
 };
 
 // Returns number ranging from 205 to 255, for RGB values.
