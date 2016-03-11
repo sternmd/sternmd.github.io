@@ -115,6 +115,7 @@ h1{
 #start {
   display: visible;
   z-index: 0;
+  color: yellow;
 }
 
 #counter {
