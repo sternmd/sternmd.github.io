@@ -140,6 +140,15 @@ injection("#red3", randomRed);
 
 ```
 
+```html
+<div id="red">
+  <div id="red1" class="redbox" data-lumvalue="">R1</div>
+  <div id="red2" class="redbox" data-lumvalue="">R2</div>
+  <div id="red3" class="redbox" data-lumvalue="">R3</div>
+</div>
+```
+
+
 Function loops through columns' children and grabs random colors that were just applied (injection), then stores those rgb values into an array.
 
 ```js
