@@ -268,6 +268,13 @@ $('#start').click(function(){
     start();
     $(this).hide();
 })
+
+function blinker() {
+    $('.blink').fadeOut(500);
+    $('.blink').fadeIn(500);
+}
+
+setInterval(blinker, 1000);
 // Endlessly spawn new divs columns.
 // var new = $('#new'); append?
 // new.style.position = "absolute";
