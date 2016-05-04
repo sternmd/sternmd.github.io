@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Maxwell Stern Portfolio | Web Development & Design</title>
+    <meta name="description" content="By day I develop, design, and create for the web in Chicago. I'm well-versed in front-end development, SEO, and analytics, and interaction design.">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.0/raphael-min.js">
+    </script>
+    <script src="/javascripts/modernizr.min.js"></script>
+    <script src="/javascripts/scroll.min.js"></script>
+    <script src="/javascripts/touch.min.js"></script>
+    <script src="/javascripts/app.min.js"></script>
+    <script src="/javascripts/painter.min.js"></script>
+    <script src="/javascripts/svgdata.js"></script>
+    <script src="/javascripts/wow.min.js"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/animate.min.css' />
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-77236705-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+  </head>
+  <body id="top">
+
+    <div id="body">
+      <div id="spacemonkey" class="animated fadeInUp"></div>
+
+      <header class="active">
+        <a href="#top"><div class="logo animated fadeInUp">Maxwell Stern</a></div>
+
+        <ul class="navi_fade">
+          <li class="animated fadeInUp"><a href="#about">About</a></li>
+          <li class="animated fadeInUp"><a href="#work">Work</a></li>
+          <li class="animated fadeInUp"><a href="#contact">Contact</a></li>
+        </ul>
+      </header>
+
+      <div class="main">
+         <div class="work_link animated fadeInUp">
+         	<a class="scroll" href="#work">Work</a>
+         </div>
+
+         <div class="about_link animated fadeInUp">
+         	<a class="scroll" href="#about">About</a>
+         </div>
+
+         <div class="contact_link animated fadeInUp">
+         	<a class="scroll" href="#contact">Contact</a>
+         </div>
+      </div><!--main-->
+    </div>
+
+    <div class="about" id="about">
+      <div class="black">
+        <p class="wow bounceInUp">
+          <span class="scarlet">By day I develop, design, and create for the web.</span> I'm well-versed in front-end development, seo, and analytics, with a growing passion for interaction design. I strive to continuously learn new techniques and code ideas into action with a holistic, humanistic approach.
+        </p>
+        <p class="wow bounceInUp">
+          By night I run <a href="https://www.etsy.com/shop/nimbusprintshop">Nimbus Prints</a> (I love screenprinting!) and make music for Chicago art collective <a href="http://www.studiomosaic.org">Studio Mosaic</a>. I also enjoy playing guitar, DJing, reading, writing, and wilderness travel.
+        </p>
+      </div>
+    </div>
+
+     <ul class="grid cs-style-4" id="work">
+    	<li>
+    		<figure>
+    			<div><img src="images/beatitudes.png" class="wow bounceInUp" alt="Beatitudes"></div>
+    			<figcaption>
+    				<h3>Beatitudes</h3>
+    				<span>
+              <strong>Built With: </strong>Node/Express.js, HTML5/CSS3/JS, Less
+            </span>
+
+            <p>
+              Beatitudes is a simple Node app that generates quotes and displays books by classic Beat Generation writers.
+            </p>
+
+            <p class="third">
+               With Google Sheets concatenation, I created a large array for each author and over 300 total quotes. An on click event would loop thorugh the array and pull a quote based on a predefined author variable and insert it into a div. If no author variable was defined, the function would display any random quote.
+            </p>
+
+            <p class="third">
+              Additional features include <strong>Bootstrap Less</strong>,  <strong>self-rendering SVG animations</strong>, <strong>Animate.css</strong>, <strong>smooth scrolling JS</strong>, and a <strong>Masonry.js</strong> gallery for authors' most popular books, descriptions, and more.
+            </p>
+
+            <span class="hide">
+              <strong>TL;DR</strong> An app that generates cool quotes. You dig?
+            </span>
+
+    				<a href="https://beautitudes.herokuapp.com/">Take a look</a>
+            <div class="git"><a href="https://github.com/sternmd/beatgen">Github</a></div>
+    			</figcaption>
+    		</figure>
+    	</li>
+    	<li>
+    		<figure>
+    			<div><img src="images/studiomosaic.png" class="wow bounceInUp" alt="Studio Mosaic"></div>
+    			<figcaption>
+    				<h3>Studio Mosaic</h3>
+    				<span>
+              <strong>Built With: </strong>HTML5/CSS3/JS, Skeleton.css, Masonry.js
+            </span>
+
+            <p>
+              Studio Mosaic is a Chicago art collective, digital music label, and independent publisher.
+            </p>
+
+            <p class="third">
+              This was a passion project for a Chicago-based art collective that I am part of. I built the original version in 2014 with <strong>Wordpress</strong>, but wanted to fully redesign the site from scratch, <strong>no CMS attached</strong>.
+            </p>
+
+            <p class="third">
+              I treated this project as a playground to learn about <strong>web design</strong>, <strong>media queries</strong>, <strong>typography</strong>, <strong>music platform integration</strong>, and experimental <strong>CSS</strong> and <strong>jQuery</strong>.
+            </p>
+
+            <span class="hide">
+              <strong>TL;DR</strong> An unconventional art site for an unconventional art group.
+            </span>
+    				<a href="http://studiomosaic.org">Take a look</a>
+            <div class="git"><a href="https://github.com/sternmd/studiomosaic">Github</a></div>
+    			</figcaption>
+    		</figure>
+    	</li>
+    	<li>
+    		<figure>
+    			<div><img src="images/mucharts.png" class="wow bounceInUp" alt="Mu Chart Generator"></div>
+    			<figcaption>
+    				<h3>/Mu/sic Chart Generator</h3>
+    				<span>
+              <strong>Built With: </strong>Express.js, React, MongoDB, HTML5/CSS3/JS, Less</span>
+            <p>
+              /Mu/sic Chart Generator is a <strong>MEAN</strong> app that allows users to build and share music album flowcharts.
+
+            <p class="third">
+              The goal of this project was to collaborate with a team of 5 developers to create a <strong>RESTful</strong> app with <strong>React.js</strong>.
+            </p>
+
+            <p class="third">
+              I was assigned to work on the front end. I used this project to hone my skills with <strong>Gulp</strong> and <strong>Bootstrap Less</strong>. The project also gave me the opportunity to learn more about <strong>React.js components</strong>, <strong>Last.fm API</strong>, <strong>HTML drag-and-drop</strong> functionality, and <strong>MongoDB</strong>.
+            </p>
+
+            <span class="hide">
+              <strong>TL;DR</strong> Easily search for and save your fav albums.
+            </span>
+
+    				<a href="http://muchartgenerator.com">Take a look</a>
+            <div class="git"><a href="https://github.com/Cams-Headphones-2/Client-app">Github</a></div>
+    			</figcaption>
+    		</figure>
+    	</li>
+      <li>
+    		<figure>
+    			<div><img src="images/caspian.png" class="wow bounceInUp" alt="Caspian App"></div>
+    			<figcaption>
+    				<h3>Caspian</h3>
+    				<span>
+              <strong>Built With: </strong>Ruby/Sinatra, HTML5/CSS3/JS
+            </span>
+
+            <p>
+              Caspian is an emergency management app, for any trip. Caspian stores and presents important In-Case-of-Emergency (ICE) info and is meant to be used while outdoors or camping.
+            </p>
+
+            <p class="third">
+              My first Ruby/Sinatra project. The objective of this pair programming assignment was to create a <strong>Ruby/Sinatra</strong> app that features database CRUD. We used <strong>PostgreSQL</strong> and <strong>ActiveRecord ORM</strong> to store our user data.
+           </p>
+
+           <p class="third">
+             Additional features include <strong> Base64 Reader</strong> for uploading images and <strong>BCrypt</strong> for hashing passwords.
+          </p>
+
+          <span class="hide">
+            <strong>TL;DR</strong> Store emergency info for safe travels.
+          </span>
+
+    				<a href="https://caspian-app.herokuapp.com/">Take a look</a>
+            <div class="git"><a href="https://github.com/alexekim/project_caspian">Github</a></div>
+    			</figcaption>
+    		</figure>
+    	</li>
+    	<li>
+    		<figure>
+    			<div><img src="images/roygbiv.png" class="wow bounceInUp" alt="ROYGBIV: The Game"></div>
+    			<figcaption>
+    				<h3>ROYGBIV</h3>
+    				<span>
+              <strong>Built With: </strong>HTML5/CSS3/JS</span>
+            <p>
+              ROYGBIV (pronounced [ROY-JEE-BIV]) is a color-matching puzzle game. The goal of the game is for a single player to determine the brightest colored row.
+            </p>
+
+            <p class="third">
+              Additional features include <strong>CSS animations</strong>, <strong>HTML data type injection</strong>, <strong>color theory, RGB, and luminance values</strong>, and <strong>JavaScript methods</strong> such as parsing, pushing, splitting, splicing, and Math.random()!
+            </p>
+
+            <span class="hide">
+              <strong>TL;DR</strong> The player with the best colorvision wins!
+            </span>
+
+    				<a href="https://sternmd.github.io/roygbiv/">Take a look</a>
+            <div class="git"><a href="https://github.com/sternmd/sternmd.github.io/tree/master/roygbiv">Github</a></div>
+    			</figcaption>
+    		</figure>
+    	</li>
+
+    	<li>
+    		<figure>
+    			<div><img src="images/bowie.jpg" class="wow bounceInUp" alt="Nimbus Prints"></div>
+    			<figcaption>
+    				<h3>Nimbus Prints</h3>
+
+            <span>
+              <strong>My Etsy shop.</strong>
+            </span>
+
+            <p>
+              Nimbus Prints is a DIYnamic screenprinting boutique in Chicago. Our fan-based t-shirt designs are inspired by anime, manga, otaku culture, music, film, & more!
+            </p>
+
+            <span class="hide">
+              <strong>TL;DR</strong> Etsy shop that sells nostalgic t-shirts.
+            </span>
+
+    				<a href="http://nimbusprintshop.etsy.com">Take a look</a>
+    			</figcaption>
+    		</figure>
+    	</li>
+    </ul>
+
+    <div class="about wow bounceInUp" id="contact">
+        <div class="black">
+            <p class="scarlet">Drop me a line if:</p>
+              <span class="scarlet">1.</span> You have a project or idea, that I can help you with.
+              <span class="scarlet">2.</span> There's a wish to get me involved in some creative dev/design work or co-work.
+              <span class="scarlet">3.</span></span> You want your business to be optimized for search engines.
+              <span class="scarlet">4.</span> You just want to say "Hi!", and grab some coffee.
+            </p>
+
+            <p><img src="images/tiny_spacemonkey.png" alt="Tiny Spacemonkey" width="40px" /> /
+              <a href="mailto:stern.maxwell@gmail.com">email</a> /   <a href="https://www.linkedin.com/in/maxwellstern">linkedin</a> / <a href="https://github.com/sternmd">github</a>
+            </p>
+        </div>
+    </div>
+
+
+    <script>
+      new WOW().init();
+    </script>
+
+  </body>
+</html>

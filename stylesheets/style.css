@@ -110,7 +110,7 @@ header {
   left: 0;
   top: 0;
   position: fixed;
-  z-index: 999999;
+  z-index: 3;
 }
 header span a {
   display: block;
@@ -252,8 +252,16 @@ header ul li a:hover {
     text-align: left;
   }
 }
+@media (max-width: 750px) and (min-width: 0px) {
+  .about {
+    font-size: 30px;
+  }
+}
 .about a {
   color: #E74C3C;
+}
+.about a:hover {
+  text-decoration: line-through;
 }
 .main {
   width: 100%;
@@ -299,6 +307,11 @@ header ul li a:hover {
   text-align: left;
   position: relative;
 }
+@media (max-width: 550px) and (min-width: 0px) {
+  .grid li {
+    width: 90%;
+  }
+}
 .grid figure {
   margin: 0;
   position: relative;
@@ -322,18 +335,42 @@ header ul li a:hover {
   color: #fff;
   font-family: 'Brandon Grotesque Black';
   font-weight: lighter;
+  padding-bottom: 5px;
+}
+@media (max-width: 750px) and (min-width: 0px) {
+  .grid figcaption h3 {
+    font-size: 24px;
+  }
 }
 .grid figcaption p {
   padding-left: 20px;
   padding-right: 20px;
   width: auto;
+  font-size: 16px;
   font-family: 'Brandon Grotesque Regular';
   text-align: justify;
   color: #fff;
 }
+@media (max-width: 800px) and (min-width: 0px) {
+  .grid figcaption p {
+    display: none;
+  }
+}
+@media (max-width: 1070px) and (min-width: 0px) {
+  .grid figcaption p.third {
+    display: none;
+  }
+}
 .grid figcaption span {
   padding: 20px;
   font-family: 'Brandon Grotesque Regular';
+  display: block;
+  padding-top: 1px;
+}
+@media (max-width: 1000px) and (min-width: 0px) {
+  .grid figcaption span.hide {
+    display: none;
+  }
 }
 .grid figcaption a {
   font-family: 'Brandon Grotesque Black';
@@ -358,6 +395,7 @@ header ul li a:hover {
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  margin-top: 50px;
 }
 .cs-style-4 figure > div {
   overflow: hidden;
@@ -414,4 +452,22 @@ header ul li a:hover {
   left: 50%;
   margin-top: -390px;
   margin-left: -380px;
+}
+.git {
+  position: absolute;
+  bottom: 0px;
+  left: 40px;
+  font-family: 'Brandon Grotesque Black';
+  font-weight: lighter;
+  text-align: left;
+  width: 10%;
+  padding: 5px 10px;
+  border-radius: 2px;
+  display: inline-block;
+  color: #fff;
+}
+@media (max-width: 1000px) and (min-width: 0px) {
+  .git {
+    display: none;
+  }
 }
