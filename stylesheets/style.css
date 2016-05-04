@@ -309,7 +309,7 @@ header ul li a:hover {
 }
 @media (max-width: 550px) and (min-width: 0px) {
   .grid li {
-    width: 90%;
+    width: 95%;
   }
 }
 .grid figure {
