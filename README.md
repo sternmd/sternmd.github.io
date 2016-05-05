@@ -35,7 +35,8 @@ Technologies used: HTML5/CSS3, Less, Javascript, jQuery.
 ### SIDENOTES, HIGHLIGHTS, & APPROACHES
 
 Self-rendering animation, using SVG strokepaths:
-```JS
+
+```js
 var spacemonkey = {
     "spacemonkey": {
         "strokepath": [
@@ -52,14 +53,13 @@ var spacemonkey = {
 };
 
  $(document).ready(function(){
- $('#spacemonkey').lazylinepainter(
+ $('#spacemonkey').painter(
  {
     "svgData": spacemonkey,
     "strokeWidth": 2,
     "strokeColor": "#E74C3C"
 }).painter('paint');
  });
-
 ```
 
 Scroll functions for fading in and out navbars
