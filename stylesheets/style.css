@@ -159,13 +159,13 @@ header span a:hover {
 .contact_link a:hover {
   border-bottom: 3px solid #E74C3C;
 }
-.work_link {
+.about_link {
   position: fixed;
   top: 40px;
   right: 50px;
   font-family: 'Brandon Grotesque Black';
   font-size: 30px;
-  z-index: 999999;
+  z-index: 10;
   color: #555;
   height: 20px;
   letter-spacing: 1.2px;
@@ -177,13 +177,13 @@ header span a:hover {
 .work_link a:hover {
   border-bottom: 3px solid #E74C3C;
 }
-.about_link {
+.work_link {
   position: fixed;
   bottom: 40px;
   left: 50px;
   font-family: 'Brandon Grotesque Black';
   font-size: 30px;
-  z-index: 999999;
+  z-index: 10;
   color: #555;
   height: 20px;
   letter-spacing: 1.2px;
