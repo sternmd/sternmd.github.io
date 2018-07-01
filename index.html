@@ -1,262 +1,352 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
   <head>
-    <title>Maxwell Stern | Web Development & Design</title>
-    <meta name="description" content="By day I develop, design, and create for the web in Chicago. I'm well-versed in front-end development, SEO, and analytics, and interaction design.">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.0/raphael-min.js">
-    </script>
-    <script src="/javascripts/modernizr.min.js"></script>
-    <script src="/javascripts/scroll.min.js"></script>
-    <script src="/javascripts/touch.min.js"></script>
-    <script src="/javascripts/app.min.js"></script>
-    <script src="/javascripts/painter.min.js"></script>
-    <script src="/javascripts/svgdata.js"></script>
-    <script src="/javascripts/wow.min.js"></script>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel='stylesheet' href='/stylesheets/animate.min.css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Maxwell Stern | Web Developer & Designer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <link rel="stylesheet" href="css/main.min.css">
+
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 
     <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-77236705-1', 'auto');
-    ga('send', 'pageview');
+      ga('create', 'UA-77236705-1', 'auto');
+      ga('send', 'pageview');
     </script>
 
   </head>
-  <body id="top">
+  <body>
+    <div class="gradient"></div>
 
-    <div id="body">
-      <div id="spacemonkey" class="animated fadeInUp"></div>
+    <div class="arrow is-hidden-mobile">
+      <a href="#projects">
+        <i class="fas fa-arrow-down"></i>
+      </a>
+    </div>
 
-      <header class="active">
-        <a href="#top"><div class="logo animated fadeInUp">Maxwell Stern</a></div>
+    <input class="burger-check" id="burger-check" type="checkbox"><label for="burger-check" class="burger"></label>
+    <nav id="navigation1" class="navigation">
+      <ul>
+        <li><a href="#hero">About</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
 
-        <ul class="navi_fade">
-          <li class="animated fadeInUp"><a href="#about">About</a></li>
-          <li class="animated fadeInUp"><a href="#work">Work</a></li>
-          <li class="animated fadeInUp"><a href="#contact">Contact</a></li>
-        </ul>
-      </header>
+    <section class="hero" id="hero">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns">
+            <div class="column">
+              <div class="is-hidden-mobile" id="circle">
+                <img src="images/yin-yang.svg" class="yinyang" alt="yin yang">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+                  <defs>
+                      <path id="circlePath" d=" M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "/>
+                  </defs>
+                  <circle cx="150" cy="100" r="75" fill="none"/>
+                  <g>
+                      <use xlink:href="#circlePath" fill="none"/>
+                      <text fill="#FFF">
+                          <textPath xlink:href="#circlePath">c a r p e d i e m</textPath>
+                      </text>
+                  </g>
+                </svg>
+              </div>
 
-      <div class="main">
-         <div class="work_link animated fadeInUp">
-         	<a class="scroll" href="#work">Work</a>
-         </div>
+              <h1 class="title">
+                Maxwell Stern
+              </h1>
+              <h2 class="subtitle red">
+                Web Development & Design <span class="is-hidden-mobile">/ Digital Marketing</span>
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-         <div class="about_link animated fadeInUp">
-         	<a class="scroll" href="#about">About</a>
-         </div>
+    <section id="about">
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <p>Maxwell Stern is a web developer and designer based in Chicago. He currently works as a frontend developer at <a href="https://www.makingwaves.com/">Making Waves</a>, and occasionally takes freelance work. He enjoys wilderness travel, <a href="http://euphorm.bandcamp.com">making music</a>,
+              <a href="http://nimbusprints.com">screenprinting t-shirts</a>, and doing <a href="http://studiomosaic.org">art projects with friends</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-         <div class="contact_link animated fadeInUp">
-         	<a class="scroll" href="#contact">Contact</a>
-         </div>
+    <div class="container paddingTlg" id="projects">
+      <p class="is-hidden-mobile" style="margin-left: .25em;">Projects</p>
+      <br/>
+      <div class="columns">
+        <div class="column">
+          <article class="message is-dark">
+            <div class="message-header">
+              <p>Beatitudes</p>
+              <div class="field is-grouped is-grouped-multiline is-hidden-mobile">
+                <div class="control">
+                  <div class="tags has-addons">
+                    <a href="https://beatitudes.herokuapp.com/" class="tag">
+                      <span class="icon">
+                        <i class="fas fa-external-link-alt"></i>
+                      </span>
+                      <span class="tag-spacer">&nbsp;</span> <span class="tag-label">Take a look</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="control">
+                  <div class="tags has-addons">
+                    <a href="https://github.com/sternmd/beatitudes" class="tag">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span class="tag-spacer">&nbsp;</span> <span class="tag-label">GitHub</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="message-image">
+              <a href="https://beatitudes.herokuapp.com/">
+                <img src="images/beatitudes.png" alt="beatitudes">
+              </a>
+            </div>
+            <div class="message-body">
+              Beatitudes is a web app that generates quotes and displays books by classic Beat Generation writers. You dig?
+              <br/>
+              <br/>
+              <span class="red">Built With: Node/Express, HTML/CSS/JavaScript, Less</span>
+            </div>
+          </article>
+        </div>
+        <div class="column">
+          <article class="message is-dark">
+            <div class="message-header">
+              <p>Nimbus Prints</p>
+              <div class="field is-grouped is-grouped-multiline is-hidden-mobile">
+                <div class="control">
+                  <div class="tags has-addons">
+                    <a href="http://nimbusprints.com" class="tag">
+                      <span class="icon">
+                        <i class="fas fa-external-link-alt"></i>
+                      </span>
+                      &nbsp; Take a look
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="message-image">
+              <a href="http://nimbusprints.com">
+                <img src="images/nimbus.jpg" alt="nimbus prints">
+              </a>
+            </div>
+            <div class="message-body">
+              Founded in 2014, Nimbus Prints began as a fan art project inspired by music, film, anime, and pop culture. Today, we have evolved into an experimental printshop, striving to create original, limited edition print series with artists in Chicago.
+              <br/>
+              <br/>
+              <span class="red">Built With: BigCartel, HTML/CSS</span>
+            </div>
+          </article>
+
+        </div>
       </div>
     </div>
 
-    <div class="about" id="about">
-      <div class="black">
-        <p class="wow bounceInUp">
-          <span class="scarlet">By day I develop, design, and create for the web.</span> I specialize in front end web development, with an extensive background in SEO and digital marketing. I strive to continuously learn new technologies, best practices, and always code ideas into action with an accessible, UX-first approach. I'm currently a frontend developer at <a href="http://makingwaves.com">Making Waves</a>.
-        </p>
-        <p class="wow bounceInUp">
-          By night I run <a href="http://www.nimbusprints.com">Nimbus Prints</a> (I love screenprinting!) and make music for Chicago art collective <a href="http://www.studiomosaic.org">Studio Mosaic</a>. I also enjoy playing guitar, DJing, reading, film, and wilderness travel.
-        </p>
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <article class="message is-dark">
+              <div class="message-header">
+                <p>Studio Mosaic</p>
+                <div class="field is-grouped is-grouped-multiline is-hidden-mobile">
+                  <div class="control">
+                    <div class="tags has-addons">
+                      <a href="http://studiomosaic.org/" class="tag">
+                        <span class="icon">
+                          <i class="fas fa-external-link-alt"></i>
+                        </span>
+                        &nbsp; Take a look
+                      </a>
+                    </div>
+                  </div>
+                  <div class="control">
+                    <div class="tags has-addons">
+                      <a href="https://github.com/sternmd/studiomosaic" class="tag">
+                        <span class="icon">
+                          <i class="fab fa-github"></i>
+                        </span>
+                        &nbsp; GitHub
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="message-image">
+                <a href="http://studiomosaic.org/">
+                  <img src="images/studiomosaic.png" alt="studio mosaic">
+                </a>
+              </div>
+              <div class="message-body">
+                Studio Mosaic is a Chicago art collective, digital music label, and independent publisher. An unconventional art site for an unconventional art group.
+                <br/>
+                <br/>
+                <span class="red">Built With: HTML/CSS/JavaScript, Sass</span>
+              </div>
+            </article>
+        </div>
+        <div class="column">
+          <article class="message is-dark">
+            <div class="message-header">
+              <p>ROYGBIV</p>
+              <div class="field is-grouped is-grouped-multiline is-hidden-mobile">
+                <div class="control">
+                  <div class="tags has-addons">
+                    <a href="/roygbiv" class="tag">
+                      <span class="icon">
+                        <i class="fas fa-external-link-alt"></i>
+                      </span>
+                      &nbsp; Take a look
+                    </a>
+                  </div>
+                </div>
+                <div class="control">
+                  <div class="tags has-addons">
+                    <a href="https://github.com/sternmd/sternmd.github.io/tree/master/roygbiv" class="tag">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      &nbsp; GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="message-image">
+              <a href="/roygbiv"></a>
+              <img src="images/roygbiv.png" alt="roygbiv game">
+            </div>
+            <div class="message-body">
+              ROYGBIV is a color-matching puzzle game. The goal of the game is for a single player to determine the brightest colored row.
+              <br/>
+              <br/>
+              <span class="red">Built With: HTML/CSS/JavaScript</span>
+            </div>
+          </article>
+        </div>
       </div>
     </div>
 
-     <ul class="grid cs-style-4" id="work">
-    	<li>
-    		<figure>
-    			<div><a href="https://beatitudes.herokuapp.com/"><img src="images/beatitudes.png" class="wow bounceInUp" alt="Beatitudes"></a></div>
-    			<figcaption>
-    				<h3>Beatitudes</h3>
-    				<span>
-              <strong>Built With: </strong>Node/Express.js, HTML5/CSS3/JS, Less
-            </span>
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <article class="message is-dark">
+            <div class="message-header">
+              <p>/Mu/sic Charts</p>
+              <div class="field is-grouped is-grouped-multiline is-hidden-mobile">
+                <div class="control">
+                  <div class="tags has-addons">
+                    <a href="https://github.com/Cams-Headphones-2/Client-app" class="tag">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      &nbsp; GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="message-image">
+              <a href="https://github.com/Cams-Headphones-2/Client-app">
+                <img src="images/mucharts.png" alt="studio mosaic">
+              </a>
+            </div>
+            <div class="message-body">
+              /Mu/sic Charts is an app that allows users to build and share music album flowcharts.
+              <br/>
+              <br/>
+              <span class="red">Built With: Node/Express, React, MongoDB, HTML/CSS/JavaScript, Less</span>
+            </div>
+          </article>
+      </div>
+      <div class="column">
+        <article class="message is-dark">
+          <div class="message-header">
+            <p>Caspian</p>
+            <div class="field is-grouped is-grouped-multiline is-hidden-mobile">
+              <div class="control">
+                <div class="tags has-addons">
+                  <a href="https://caspian-app.herokuapp.com/" class="tag">
+                    <span class="icon">
+                      <i class="fas fa-external-link-alt"></i>
+                    </span>
+                    &nbsp; Take a look
+                  </a>
+                </div>
+              </div>
+              <div class="control">
+                <div class="tags has-addons">
+                  <a href="https://github.com/alexekim/project_caspian" class="tag">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    &nbsp; GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="message-image">
+            <a href="https://caspian-app.herokuapp.com/">
+              <img src="images/caspian.png" alt="roygbiv game">
+            </a>
+          </div>
+          <div class="message-body">
+            My first Ruby/Sinatra project. Caspian is an emergency management app, for any trip. Caspian stores and presents important In-Case-of-Emergency info and is meant to be used while outdoors or camping.
+            <br/>
+            <br/>
+            <span class="red">Built With: Ruby/Sinatra, HTML/CSS/JavaScript</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
 
-            <p>
-              Beatitudes is a simple Node app that generates quotes and displays books by classic Beat Generation writers.
-            </p>
-
-            <p class="third">
-               With Google Sheets concatenation, I created a large array for each author and over 300 total quotes. An on click event would loop through the array and pull a quote based on a predefined author variable and insert it into a div. If no author variable was defined, the function would display any random quote.
-            </p>
-
-            <p class="third">
-              Additional features include <strong>Bootstrap Less</strong>,  <strong>self-rendering SVG animations</strong>, <strong>Animate.css</strong>, <strong>smooth scrolling JS</strong>, and a <strong>Masonry.js</strong> gallery for authors' most popular books, descriptions, and more.
-            </p>
-
-            <span class="hide">
-              <strong>TL;DR</strong> An app that generates cool quotes. You dig?
-            </span>
-
-    				<a href="https://beatitudes.herokuapp.com/">Take a look</a>
-            <div class="git"><a href="https://github.com/sternmd/beatgen">Github</a></div>
-    			</figcaption>
-    		</figure>
-    	</li>
-    	<li>
-    		<figure>
-    			<div><a href="http://studiomosaic.org"><img src="images/studiomosaic.png" class="wow bounceInUp" alt="Studio Mosaic"></a></div>
-    			<figcaption>
-    				<h3>Studio Mosaic</h3>
-    				<span>
-              <strong>Built With: </strong>HTML5/CSS3/JS, Skeleton.css, Masonry.js
-            </span>
-
-            <p>
-              Studio Mosaic is a Chicago art collective, digital music label, and independent publisher.
-            </p>
-
-            <p class="third">
-              This was a passion project for a Chicago-based art collective that I am part of. I built the original version in 2014 with <strong>Wordpress</strong>, but wanted to fully redesign the site from scratch, <strong>no CMS attached</strong>.
-            </p>
-
-            <p class="third">
-              I treated this project as a playground to learn about <strong>web design</strong>, <strong>media queries</strong>, <strong>typography</strong>, <strong>music platform integration</strong>, and experimental <strong>CSS</strong> and <strong>jQuery</strong>.
-            </p>
-
-            <span class="hide">
-              <strong>TL;DR</strong> An unconventional art site for an unconventional art group.
-            </span>
-    				<a href="http://studiomosaic.org">Take a look</a>
-            <div class="git"><a href="https://github.com/sternmd/studiomosaic">Github</a></div>
-    			</figcaption>
-    		</figure>
-    	</li>
-    	<li>
-    		<figure>
-    			<div><a href="http://muchartgenerator.com"><img src="images/mucharts.png" class="wow bounceInUp" alt="Mu Chart Generator"></a></div>
-    			<figcaption>
-    				<h3>/Mu/sic Chart Generator</h3>
-    				<span>
-              <strong>Built With: </strong>Express.js, React, MongoDB, HTML5/CSS3/JS, Less</span>
-            <p>
-              /Mu/sic Chart Generator is a <strong>MEAN</strong> app that allows users to build and share music album flowcharts.
-
-            <p class="third">
-              The goal of this project was to collaborate with a team of 5 developers to create a <strong>RESTful</strong> app with <strong>React.js</strong>.
-            </p>
-
-            <p class="third">
-              I was assigned to work on the front end. I used this project to hone my skills with <strong>Gulp</strong> and <strong>Bootstrap Less</strong>. The project also gave me the opportunity to learn more about <strong>React.js components</strong>, <strong>Last.fm API</strong>, <strong>HTML drag-and-drop</strong> functionality, and <strong>MongoDB</strong>.
-            </p>
-
-            <span class="hide">
-              <strong>TL;DR</strong> Easily search for and save your fav albums.
-            </span>
-
-    				<a href="http://muchartgenerator.com">Take a look</a>
-            <div class="git"><a href="https://github.com/Cams-Headphones-2/Client-app">Github</a></div>
-    			</figcaption>
-    		</figure>
-    	</li>
-      <li>
-    		<figure>
-    			<div><a href="https://caspian-app.herokuapp.com/"><img src="images/caspian.png" class="wow bounceInUp" alt="Caspian App"></a></div>
-    			<figcaption>
-    				<h3>Caspian</h3>
-    				<span>
-              <strong>Built With: </strong>Ruby/Sinatra, HTML5/CSS3/JS
-            </span>
-
-            <p>
-              Caspian is an emergency management app, for any trip. Caspian stores and presents important In-Case-of-Emergency (ICE) info and is meant to be used while outdoors or camping.
-            </p>
-
-            <p class="third">
-              My first Ruby/Sinatra project. The objective of this pair programming assignment was to create a <strong>Ruby/Sinatra</strong> app that features database CRUD. We used <strong>PostgreSQL</strong> and <strong>ActiveRecord ORM</strong> to store our user data.
-           </p>
-
-           <p class="third">
-             Additional features include <strong> Base64 Reader</strong> for uploading images and <strong>BCrypt</strong> for hashing passwords.
+  <section id="contact">
+    <div class="container paddingTlg">
+      <div class="columns">
+        <div class="column">
+          <p>Drop me a line if:</p>
+          <br/>
+          <p><span class="red">1.</span> You have a project or idea that I can help you with. <span class="red">2.</span> There's a wish to get me involved in some creative dev/design work or co-work. <span class="red">3.</span> You want your website to be optimized for search engines. <span class="red">4.</span> You just want to say "Hi!"
           </p>
 
-          <span class="hide">
-            <strong>TL;DR</strong> Store emergency info for safe travels.
-          </span>
-
-    				<a href="https://caspian-app.herokuapp.com/">Take a look</a>
-            <div class="git"><a href="https://github.com/alexekim/project_caspian">Github</a></div>
-    			</figcaption>
-    		</figure>
-    	</li>
-    	<li>
-    		<figure>
-    			<div><a href="https://sternmd.github.io/roygbiv/"><img src="images/roygbiv.png" class="wow bounceInUp" alt="ROYGBIV: The Game"></a></div>
-    			<figcaption>
-    				<h3>ROYGBIV</h3>
-    				<span>
-              <strong>Built With: </strong>HTML5/CSS3/JS</span>
-            <p>
-              ROYGBIV (pronounced [ROY-JEE-BIV]) is a color-matching puzzle game. The goal of the game is for a single player to determine the brightest colored row.
-            </p>
-
-            <p class="third">
-              Additional features include <strong>CSS animations</strong>, <strong>HTML data type injection</strong>, <strong>color theory, RGB, and luminance values</strong>, and <strong>JavaScript methods</strong> such as parsing, pushing, splitting, splicing, and Math.random()!
-            </p>
-
-            <span class="hide">
-              <strong>TL;DR</strong> The player with the best colorvision wins!
-            </span>
-
-    				<a href="https://sternmd.github.io/roygbiv/">Take a look</a>
-            <div class="git"><a href="https://github.com/sternmd/sternmd.github.io/tree/master/roygbiv">Github</a></div>
-    			</figcaption>
-    		</figure>
-    	</li>
-
-    	<li>
-    		<figure>
-    			<div><img src="images/bowie.jpg" class="wow bounceInUp" alt="Nimbus Prints"></div>
-    			<figcaption>
-    				<h3>Nimbus Prints</h3>
-
-            <span>
-              <strong>Built With: Big Cartel, Custom CSS</strong>
-            </span>
-
-            <p>
-              Founded in 2014, Nimbus Prints began as a fan art project inspired by music, film, anime, and pop culture. Today, we have evolved into an experimental printshop, striving to create original, limited edition print series with artists in Chicago.
-            </p>
-
-            <span class="hide">
-              <strong>TL;DR</strong> Etsy shop that sells nostalgic t-shirts.
-            </span>
-
-    				<a href="http://nimbusprints.com">Take a look</a>
-    			</figcaption>
-    		</figure>
-    	</li>
-    </ul>
-
-    <div class="about wow bounceInUp" id="contact">
-        <div class="black">
-            <p class="scarlet">Drop me a line if:</p>
-              <span class="scarlet">1.</span> You have a project or idea, that I can help you with.
-              <span class="scarlet">2.</span> There's a wish to get me involved in some creative dev/design work or co-work.
-              <span class="scarlet">3.</span></span> You want your business to be optimized for search engines.
-              <span class="scarlet">4.</span> You just want to say "Hi!", and grab some coffee.
-            </p>
-
-            <p><img src="images/tiny_spacemonkey.png" alt="Tiny Spacemonkey" width="40px" /> /
-              <a href="mailto:stern.maxwell@gmail.com">email</a> /
-              <a href="https://www.linkedin.com/in/maxwellstern">linkedin</a> /
-              <a href="https://github.com/sternmd">github</a> /
-              <a href="https://codepen.io/sternmd/">codepen</a>
-            </p>
+          <p class="paddingTlg">
+            <a href="mailto:stern.maxwell@gmail.com">email</a> /
+            <a href="https://www.linkedin.com/in/maxwellstern">linkedin</a> /
+            <a href="https://github.com/sternmd">github</a> /
+            <a href="https://codepen.io/sternmd/">codepen</a>
+          </p>
+          <br />
+          <br />
         </div>
+      </div>
     </div>
+  </section>
 
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+  <script src="https://areaaperta.com/nicescroll/js/jquery.nicescroll.min.js"></script>
+  <script type="text/javascript" src="js/main.min.js"></script>
 
-    <script>
-      new WOW().init();
-    </script>
-
-  </body>
+</body>
 </html>
